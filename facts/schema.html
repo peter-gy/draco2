@@ -231,13 +231,18 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#general-dataset-properties">
-   General Dataset Properties
+  <a class="reference internal nav-link" href="#dataset-properties">
+   Dataset Properties
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#field-properties">
    Field Properties
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
   </a>
  </li>
 </ul>
@@ -254,8 +259,8 @@
   <div class="section" id="schema-description">
 <h1>Schema Description<a class="headerlink" href="#schema-description" title="Permalink to this headline">¶</a></h1>
 <p>The schema describes what we know about the dataset and the fields in the data. Besides general statistics about the whole dataset, the schema also has information about field types and field statistics.</p>
-<div class="section" id="general-dataset-properties">
-<h2>General Dataset Properties<a class="headerlink" href="#general-dataset-properties" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dataset-properties">
+<h2>Dataset Properties<a class="headerlink" href="#dataset-properties" title="Permalink to this headline">¶</a></h2>
 <dl class="simple myst">
 <dt><code class="docutils literal notranslate"><span class="pre">numberRows</span></code></dt><dd><p>The number of rows in the dataset. Draco can use this fact about the data to recommend chart design that scale to the size of the dataset.</p>
 </dd>
@@ -263,7 +268,7 @@
 </div>
 <div class="section" id="field-properties">
 <h2>Field Properties<a class="headerlink" href="#field-properties" title="Permalink to this headline">¶</a></h2>
-<p>Draco can use information about the field type and field statistics. This information can be encoded as the following facts.</p>
+<p>Draco can use information about the field type and field statistics. Each field property is associated with a field. The facts therefore have the form of e.g. <code class="docutils literal notranslate"><span class="pre">fact(dataType,foo,number).</span></code> (read as <em>the type of the foo field is number</em>). For each field, there should be a fact <code class="docutils literal notranslate"><span class="pre">field</span></code> that tells Draco that the field exists (e.g. <code class="docutils literal notranslate"><span class="pre">fact(field,foo).</span></code>).</p>
 <dl class="simple myst">
 <dt><code class="docutils literal notranslate"><span class="pre">dataType</span></code></dt><dd><p>The type of the data in the column for this field. One of <code class="docutils literal notranslate"><span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, or <code class="docutils literal notranslate"><span class="pre">date</span></code>.</p>
 </dd>
@@ -278,6 +283,28 @@
 <dt><code class="docutils literal notranslate"><span class="pre">freq</span></code></dt><dd><p>The frequency of the most common value. Only used for strings.</p>
 </dd>
 </dl>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span><span class="nf">fact</span><span class="p">(</span><span class="s s-Atom">numberRows</span><span class="p">,</span><span class="mi">42</span><span class="p">).</span>
+
+<span class="nf">fact</span><span class="p">(</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">date</span><span class="p">).</span>
+<span class="nf">fact</span><span class="p">(</span><span class="s s-Atom">dataType</span><span class="p">,</span><span class="s s-Atom">date</span><span class="p">,</span><span class="s s-Atom">date</span><span class="p">).</span>
+<span class="nf">fact</span><span class="p">(</span><span class="s s-Atom">unique</span><span class="p">,</span><span class="s s-Atom">date</span><span class="p">,</span><span class="mi">1461</span><span class="p">).</span>
+
+<span class="nf">fact</span><span class="p">(</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">precipitation</span><span class="p">).</span>
+<span class="nf">fact</span><span class="p">(</span><span class="s s-Atom">dataType</span><span class="p">,</span><span class="s s-Atom">precipitation</span><span class="p">,</span><span class="s s-Atom">number</span><span class="p">).</span>
+<span class="nf">fact</span><span class="p">(</span><span class="s s-Atom">unique</span><span class="p">,</span><span class="s s-Atom">precipitation</span><span class="p">,</span><span class="mi">111</span><span class="p">).</span>
+<span class="nf">fact</span><span class="p">(</span><span class="s s-Atom">min</span><span class="p">,</span><span class="s s-Atom">precipitation</span><span class="p">,</span><span class="mi">0</span><span class="p">).</span>
+<span class="nf">fact</span><span class="p">(</span><span class="s s-Atom">max</span><span class="p">,</span><span class="s s-Atom">precipitation</span><span class="p">,</span><span class="mi">55</span><span class="p">).</span>
+<span class="nf">fact</span><span class="p">(</span><span class="s s-Atom">std</span><span class="p">,</span><span class="s s-Atom">precipitation</span><span class="p">,</span><span class="mi">6</span><span class="p">).</span>
+
+<span class="nf">fact</span><span class="p">(</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">weather</span><span class="p">).</span>
+<span class="nf">fact</span><span class="p">(</span><span class="s s-Atom">dataType</span><span class="p">,</span><span class="s s-Atom">weather</span><span class="p">,</span><span class="s s-Atom">string</span><span class="p">).</span>
+<span class="nf">fact</span><span class="p">(</span><span class="s s-Atom">unique</span><span class="p">,</span><span class="s s-Atom">weather</span><span class="p">,</span><span class="mi">5</span><span class="p">).</span>
+<span class="nf">fact</span><span class="p">(</span><span class="s s-Atom">freq</span><span class="p">,</span><span class="s s-Atom">weather</span><span class="p">,</span><span class="mi">714</span><span class="p">).</span>
+</pre></div>
+</div>
 </div>
 </div>
 

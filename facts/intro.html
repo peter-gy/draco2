@@ -239,6 +239,7 @@
 <p class="admonition-title">Note</p>
 <p>You could design your own description language and use it with Draco or extend the existing language we use here. If you add new information, Draco will not immediately use the new facts until you also add constraints over the facts.</p>
 </div>
+<p>The constraint solver Clingo reasons about the facts that describe a visualization. The specific format we use to provide facts to the solver is as a <em>function</em> of the name <code class="docutils literal notranslate"><span class="pre">fact</span></code>. For example, the number of rows in the dataset in this function form is <code class="docutils literal notranslate"><span class="pre">fact(numberRows,42).</span></code> (read as <em>the number of rows is 42</em>).</p>
 </div>
 
     <script type="text/x-thebe-config">
