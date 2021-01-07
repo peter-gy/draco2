@@ -277,12 +277,24 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;numberRows&#39;: 1461,
- &#39;field&#39;: {&#39;date&#39;: {&#39;unique&#39;: 1461, &#39;dataType&#39;: &#39;date&#39;},
-  &#39;precipitation&#39;: {&#39;unique&#39;: 111, &#39;dataType&#39;: &#39;number&#39;},
-  &#39;temp_max&#39;: {&#39;unique&#39;: 67, &#39;dataType&#39;: &#39;number&#39;},
-  &#39;temp_min&#39;: {&#39;unique&#39;: 55, &#39;dataType&#39;: &#39;number&#39;},
-  &#39;wind&#39;: {&#39;unique&#39;: 79, &#39;dataType&#39;: &#39;number&#39;},
-  &#39;weather&#39;: {&#39;unique&#39;: 5, &#39;dataType&#39;: &#39;string&#39;}}}
+ &#39;field&#39;: {&#39;date&#39;: {&#39;dataType&#39;: &#39;date&#39;, &#39;unique&#39;: 1461},
+  &#39;precipitation&#39;: {&#39;dataType&#39;: &#39;number&#39;,
+   &#39;unique&#39;: 111,
+   &#39;min&#39;: 0,
+   &#39;max&#39;: 55,
+   &#39;std&#39;: 6},
+  &#39;temp_max&#39;: {&#39;dataType&#39;: &#39;number&#39;,
+   &#39;unique&#39;: 67,
+   &#39;min&#39;: -1,
+   &#39;max&#39;: 35,
+   &#39;std&#39;: 7},
+  &#39;temp_min&#39;: {&#39;dataType&#39;: &#39;number&#39;,
+   &#39;unique&#39;: 55,
+   &#39;min&#39;: -7,
+   &#39;max&#39;: 18,
+   &#39;std&#39;: 5},
+  &#39;wind&#39;: {&#39;dataType&#39;: &#39;number&#39;, &#39;unique&#39;: 79, &#39;min&#39;: 0, &#39;max&#39;: 9, &#39;std&#39;: 1},
+  &#39;weather&#39;: {&#39;dataType&#39;: &#39;string&#39;, &#39;unique&#39;: 5, &#39;freq&#39;: 714}}}
 </pre></div>
 </div>
 </div>
@@ -297,7 +309,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Model(answer_set=[fact(numberRows,1461), fact(field,date), fact(field,precipitation), fact(field,temp_max), fact(field,temp_min), fact(field,wind), fact(field,weather), fact(unique,date,1461), fact(dataType,date,date), fact(unique,precipitation,111), fact(dataType,precipitation,number), fact(unique,temp_max,67), fact(dataType,temp_max,number), fact(unique,temp_min,55), fact(dataType,temp_min,number), fact(unique,wind,79), fact(dataType,wind,number), fact(unique,weather,5), fact(dataType,weather,string)], cost=[], number=1)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Model(answer_set=[fact(numberRows,1461), fact(field,date), fact(field,precipitation), fact(field,temp_max), fact(field,temp_min), fact(field,wind), fact(field,weather), fact(dataType,date,date), fact(unique,date,1461), fact(dataType,precipitation,number), fact(unique,precipitation,111), fact(min,precipitation,0), fact(max,precipitation,55), fact(std,precipitation,6), fact(dataType,temp_max,number), fact(unique,temp_max,67), fact(max,temp_max,35), fact(std,temp_max,7), fact(dataType,temp_min,number), fact(unique,temp_min,55), fact(max,temp_min,18), fact(std,temp_min,5), fact(dataType,wind,number), fact(unique,wind,79), fact(min,wind,0), fact(max,wind,9), fact(std,wind,1), fact(dataType,weather,string), fact(unique,weather,5), fact(freq,weather,714), fact(min,temp_max,-1), fact(min,temp_min,-7)], cost=[], number=1)]
 </pre></div>
 </div>
 </div>
