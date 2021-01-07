@@ -54,7 +54,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Overview" href="descriptions/intro.html" />
+    <link rel="next" title="Overview" href="facts/intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -93,22 +93,22 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Descriptions
+  Facts
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="descriptions/intro.html">
+  <a class="reference internal" href="facts/intro.html">
    Overview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="descriptions/schema.html">
+  <a class="reference internal" href="facts/schema.html">
    Schema Description
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="descriptions/task.html">
+  <a class="reference internal" href="facts/task.html">
    Task Description
   </a>
  </li>
@@ -137,8 +137,8 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="references.html">
-   References
+  <a class="reference internal" href="bibliography.html">
+   Bibliography
   </a>
  </li>
 </ul>
@@ -249,7 +249,13 @@
                 
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>In this book, we describe a new version of Draco. Draco was first published in <a class="bibtex reference internal" href="references.html#moritz2018formalizing" id="id1">[MWN+18]</a>.</p>
+<p>In this book, we describe a new version of Draco. Draco was first published in <span class="bibtex" id="id1">[moritz2018formalizing]</span>.</p>
+<p>Draco has three parts.</p>
+<ol class="simple">
+<li><p>A general description language for visualizations as facts.</p></li>
+<li><p>A knowledge base as constraints over facts. This knowledge base describes which visualizations are valid and what visualizations my be preferred.</p></li>
+<li><p>An API to use the <a class="reference external" href="https://potassco.org/clingo/">Clingo</a> solver to apply the knowledge base to visualizations described as a set of facts.</p></li>
+</ol>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>TODO: set up and describe installation with conda.</p>
@@ -290,7 +296,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="descriptions/intro.html" title="next page">Overview</a>
+    <a class='right-next' id="next-link" href="facts/intro.html" title="next page">Overview</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

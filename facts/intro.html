@@ -94,7 +94,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Descriptions
+  Facts
  </span>
 </p>
 <ul class="current nav sidenav_l1">
@@ -138,8 +138,8 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../references.html">
-   References
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
   </a>
  </li>
 </ul>
@@ -182,7 +182,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/descriptions/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/facts/intro.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -202,10 +202,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/cmudig/draco2/issues/new?title=Issue%20on%20page%20%2Fdescriptions/intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/cmudig/draco2/issues/new?title=Issue%20on%20page%20%2Ffacts/intro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/cmudig/draco2/edit/main/docs/descriptions/intro.md"><button
+        <a class="edit-button" href="https://github.com/cmudig/draco2/edit/main/docs/facts/intro.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -234,10 +234,10 @@
                 
   <div class="section" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
-<p>To express knowledge about visualizations, we need a language to describe visualizations. A visualization is described as a set of facts. In this section, we will describe the language we have chosen for Draco. The Draco description language describes visualizations as encodings. The language also describes the context of a visualization (e.g. properties of the data and task).</p>
+<p>To express knowledge about visualizations, we first need a language to describe visualizations. Draco describes visualizations and context around them (e.g. properties of the data and task) as <em>facts</em>. In this section, we will describe the kinds of facts we chose for Draco.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You could design your own description language and use it with Draco or extend the existing language we use here.</p>
+<p>You could design your own description language and use it with Draco or extend the existing language we use here. If you add new information, Draco will not immediately use the new facts until you also add constraints over the facts.</p>
 </div>
 </div>
 
@@ -254,7 +254,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./descriptions"
+            path: "./facts"
         },
         predefinedOutput: true
     }
