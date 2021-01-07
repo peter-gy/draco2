@@ -290,13 +290,14 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">program</span> <span class="o">=</span> <span class="n">dict_to_facts</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>
-<span class="n">run_clingo</span><span class="p">(</span><span class="n">program</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">run_clingo</span><span class="p">(</span><span class="n">program</span><span class="p">)</span>
+
+<span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number: 1
-Atoms: [fact(numberRows,1461), fact(field,date), fact(field,precipitation), fact(field,temp_max), fact(field,temp_min), fact(field,wind), fact(field,weather), fact(unique,date,1461), fact(dataType,date,date), fact(unique,precipitation,111), fact(dataType,precipitation,number), fact(unique,temp_max,67), fact(dataType,temp_max,number), fact(unique,temp_min,55), fact(dataType,temp_min,number), fact(unique,wind,79), fact(dataType,wind,number), fact(unique,weather,5), fact(dataType,weather,string)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Model(answer_set=[fact(numberRows,1461), fact(field,date), fact(field,precipitation), fact(field,temp_max), fact(field,temp_min), fact(field,wind), fact(field,weather), fact(unique,date,1461), fact(dataType,date,date), fact(unique,precipitation,111), fact(dataType,precipitation,number), fact(unique,temp_max,67), fact(dataType,temp_max,number), fact(unique,temp_min,55), fact(dataType,temp_min,number), fact(unique,wind,79), fact(dataType,wind,number), fact(unique,weather,5), fact(dataType,weather,string)], cost=[], number=1)]
 </pre></div>
 </div>
 </div>
