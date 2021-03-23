@@ -255,6 +255,7 @@
 <p class="admonition-title">Note</p>
 <p>You could design your own description language and use it with Draco or extend the existing language we use here. If you add new information, Draco will not immediately use the new facts until you also add constraints over the facts.</p>
 </div>
+<p>While our encoding is inspired by Vega-Lite <span id="id1">[<a class="reference internal" href="../bibliography.html#id3"><span>SMWH16</span></a>]</span>, Draco is not limited to the features Vega-Lite supports.</p>
 <p>The constraint solver Clingo reasons about the facts that describe a visualization. The specific format we use to provide facts to the solver is as a <em>function</em> of the name <code class="docutils literal notranslate"><span class="pre">property</span></code> or <code class="docutils literal notranslate"><span class="pre">attribute</span></code>.</p>
 <p>Properties describe what properties exist on an object. If a property has no parents, we use a special object <code class="docutils literal notranslate"><span class="pre">root</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">property(view,root,v1).</span></code> says that there is a view v1 on the root.</p>
 <p>Attribute facts specify properties of objects. For example, the number of rows in the dataset in this function form is <code class="docutils literal notranslate"><span class="pre">attribute(number_rows,root,42).</span></code> (read as <em>the number of rows (on the root object) is 42</em>).</p>
