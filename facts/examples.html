@@ -150,6 +150,16 @@
    Programs
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/run.html">
+   Run
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/spec.html">
+   Specifications
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -423,7 +433,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bar Chart</span>
 
-<span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="p">([</span><span class="s1">&#39;condition&#39;</span><span class="p">]),</span> <span class="p">{</span>
+<span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="p">([</span><span class="s1">&#39;condition&#39;</span><span class="p">,</span> <span class="s1">&#39;temperature&#39;</span><span class="p">]),</span> <span class="p">{</span>
     <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
@@ -431,7 +441,8 @@
             <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span>
         <span class="p">},</span> <span class="p">{</span>
             <span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span>
+            <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span>
         <span class="p">}]</span>
     <span class="p">}],</span>
     <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[{</span>
@@ -448,22 +459,26 @@
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;attribute(number_rows,root,100).&#39;,
  &#39;property(field,root,0).&#39;,
- &#39;attribute((field,name),0,condition).&#39;,
- &#39;attribute((field,type),0,string).&#39;,
- &#39;property(mark,root,1).&#39;,
- &#39;attribute((mark,type),1,bar).&#39;,
- &#39;property(encoding,1,2).&#39;,
- &#39;attribute((encoding,channel),2,x).&#39;,
- &#39;attribute((encoding,field),2,condition).&#39;,
- &#39;property(encoding,1,3).&#39;,
- &#39;attribute((encoding,channel),3,y).&#39;,
- &#39;attribute((encoding,field),3,count).&#39;,
- &#39;property(scale,root,4).&#39;,
- &#39;attribute((scale,channel),4,x).&#39;,
- &#39;attribute((scale,type),4,ordinal).&#39;,
+ &#39;attribute((field,name),0,temperature).&#39;,
+ &#39;attribute((field,type),0,number).&#39;,
+ &#39;property(field,root,1).&#39;,
+ &#39;attribute((field,name),1,condition).&#39;,
+ &#39;attribute((field,type),1,string).&#39;,
+ &#39;property(mark,root,2).&#39;,
+ &#39;attribute((mark,type),2,bar).&#39;,
+ &#39;property(encoding,2,3).&#39;,
+ &#39;attribute((encoding,channel),3,x).&#39;,
+ &#39;attribute((encoding,field),3,condition).&#39;,
+ &#39;property(encoding,2,4).&#39;,
+ &#39;attribute((encoding,channel),4,y).&#39;,
+ &#39;attribute((encoding,field),4,temperature).&#39;,
+ &#39;attribute((encoding,aggregate),4,mean).&#39;,
  &#39;property(scale,root,5).&#39;,
- &#39;attribute((scale,channel),5,y).&#39;,
- &#39;attribute((scale,type),5,linear).&#39;]
+ &#39;attribute((scale,channel),5,x).&#39;,
+ &#39;attribute((scale,type),5,ordinal).&#39;,
+ &#39;property(scale,root,6).&#39;,
+ &#39;attribute((scale,channel),6,y).&#39;,
+ &#39;attribute((scale,type),6,linear).&#39;]
 </pre></div>
 </div>
 </div>
@@ -472,7 +487,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histogram</span>
 
-<span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="p">([</span><span class="s1">&#39;temperature&#39;</span><span class="p">]),</span> <span class="p">{</span>
+<span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="p">([</span><span class="s1">&#39;condition&#39;</span><span class="p">]),</span> <span class="p">{</span>
     <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[{</span>
         <span class="s2">&quot;mark_type&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
         <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[{</span>
@@ -497,8 +512,8 @@
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;attribute(number_rows,root,100).&#39;,
  &#39;property(field,root,0).&#39;,
- &#39;attribute((field,name),0,temperature).&#39;,
- &#39;attribute((field,type),0,number).&#39;,
+ &#39;attribute((field,name),0,condition).&#39;,
+ &#39;attribute((field,type),0,string).&#39;,
  &#39;property(mark,root,1).&#39;,
  &#39;attribute((mark,mark_type),1,bar).&#39;,
  &#39;property(encoding,1,2).&#39;,

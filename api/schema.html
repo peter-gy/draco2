@@ -150,6 +150,16 @@
    Programs
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="run.html">
+   Run
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="spec.html">
+   Specifications
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -295,7 +305,7 @@
 <p>Here, we will cover how to load data and use inferred statistics in Draco.</p>
 <div class="section" id="available-functions">
 <h2>Available functions<a class="headerlink" href="#available-functions" title="Permalink to this headline">¶</a></h2>
-<p>The main functions allow you to get the schema from a Pandas dataframe or a file. These functions return a schema as a dictionary, which you can encode as Answer Set Programming facts using our generic <cite>dict_to_facts</cite> encoder.</p>
+<p>The main functions allow you to get the schema from a Pandas dataframe or a file. These functions return a schema as a dictionary, which you can encode as Answer Set Programming facts using our generic <code class="docutils literal notranslate"><span class="pre">dict_to_facts</span></code> encoder.</p>
 <dl class="py function">
 <dt id="draco.schema.schema_from_dataframe">
 <code class="sig-prename descclassname"><span class="pre">draco.schema.</span></code><code class="sig-name descname"><span class="pre">schema_from_dataframe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">df</span></em>, <em class="sig-param"><span class="pre">parse_data_type=&lt;function</span> <span class="pre">dtype_to_field_type&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.schema.schema_from_dataframe" title="Permalink to this definition">¶</a></dt>
