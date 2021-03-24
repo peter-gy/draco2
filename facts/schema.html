@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Schema Description &#8212; Draco</title>
+    <title>Data and Schema &#8212; Draco</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,7 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="View Description" href="view.html" />
+    <link rel="next" title="Views" href="view.html" />
     <link rel="prev" title="Overview" href="intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -105,22 +105,32 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Schema Description
+   Data and Schema
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="view.html">
-   View Description
+   Views
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="mark.html">
-   Mark Description
+   Marks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="encoding.html">
+   Encodings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scale.html">
+   Scales
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="task.html">
-   Task Description
+   Tasks
   </a>
  </li>
  <li class="toctree-l1">
@@ -146,8 +156,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../api/programs.html">
-   Programs
+  <a class="reference internal" href="../api/spec.html">
+   Specifications
   </a>
  </li>
  <li class="toctree-l1">
@@ -156,8 +166,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../api/spec.html">
-   Specifications
+  <a class="reference internal" href="../api/facts.html">
+   Fact Utils
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/programs.html">
+   Programs
   </a>
  </li>
 </ul>
@@ -288,9 +303,11 @@
         
               <div>
                 
-  <div class="section" id="schema-description">
-<h1>Schema Description<a class="headerlink" href="#schema-description" title="Permalink to this headline">¶</a></h1>
-<p>The schema describes what we know about the dataset and the fields in the data. Besides general statistics about the whole dataset, the schema also has information about field types and field statistics.</p>
+  <div class="section" id="data-and-schema">
+<h1>Data and Schema<a class="headerlink" href="#data-and-schema" title="Permalink to this headline">¶</a></h1>
+<p>In Draco, you can describe what you know about the dataset and the fields in the data. There can be only one dataset in a Draco program.</p>
+<p>Besides general statistics about the whole dataset, the schema has information about field types and field statistics.</p>
+<p>You can use Draco’s <a class="reference internal" href="../api/schema.html"><span class="doc std std-doc">data schema API</span></a> to generate a schema description from a file or Pandas dataframe.</p>
 <div class="section" id="dataset-properties">
 <h2>Dataset Properties<a class="headerlink" href="#dataset-properties" title="Permalink to this headline">¶</a></h2>
 <p>General properties of the dataset that are not specific to a field are properties of the root.</p>
@@ -363,7 +380,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Overview</a>
-    <a class='right-next' id="next-link" href="view.html" title="next page">View Description</a>
+    <a class='right-next' id="next-link" href="view.html" title="next page">Views</a>
 
         </div>
         

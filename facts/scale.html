@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Overview &#8212; Draco</title>
+    <title>Scales &#8212; Draco</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data and Schema" href="schema.html" />
-    <link rel="prev" title="Introduction" href="../intro.html" />
+    <link rel="next" title="Tasks" href="task.html" />
+    <link rel="prev" title="Encodings" href="encoding.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -98,8 +98,8 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
    Overview
   </a>
  </li>
@@ -123,8 +123,8 @@
    Encodings
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="scale.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Scales
   </a>
  </li>
@@ -227,7 +227,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/facts/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/facts/scale.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -247,10 +247,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/cmudig/draco2/issues/new?title=Issue%20on%20page%20%2Ffacts/intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/cmudig/draco2/issues/new?title=Issue%20on%20page%20%2Ffacts/scale.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/cmudig/draco2/edit/main/docs/facts/intro.md"><button
+        <a class="edit-button" href="https://github.com/cmudig/draco2/edit/main/docs/facts/scale.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -277,25 +277,13 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#draco-has-a-generic-specification-format">
-   Draco has a Generic Specification Format
+  <a class="reference internal nav-link" href="#scale-properties">
+   Scale Properties
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#properties">
-     Properties
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#attributes">
-     Attributes
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#draco-s-specification-format-for-visualizations">
-   Draco’s Specification Format for Visualizations
+  <a class="reference internal nav-link" href="#example">
+   Example
   </a>
  </li>
 </ul>
@@ -310,29 +298,17 @@
         
               <div>
                 
-  <div class="section" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
-<p>To express knowledge about visualizations, we first need a language to describe visualizations. Draco describes visualizations and context around them (e.g. properties of the data and task) as <em>facts</em>. In this section, we will describe the kinds of facts we chose for Draco.</p>
-<div class="section" id="draco-has-a-generic-specification-format">
-<h2>Draco has a Generic Specification Format<a class="headerlink" href="#draco-has-a-generic-specification-format" title="Permalink to this headline">¶</a></h2>
-<p>The constraint solver Clingo reasons about the facts that describe a visualization. The specific format we use to describe facts to the solver is as a <em>function</em> of the name <code class="docutils literal notranslate"><span class="pre">property</span></code> or <code class="docutils literal notranslate"><span class="pre">attribute</span></code>.</p>
-<div class="section" id="properties">
-<h3>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
-<p>Properties describe what properties exist on an object. If a property has no parents, we use a special object <code class="docutils literal notranslate"><span class="pre">root</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">property(view,root,v1).</span></code> says that there is a view v1 on the root.</p>
+  <div class="section" id="scales">
+<h1>Scales<a class="headerlink" href="#scales" title="Permalink to this headline">¶</a></h1>
+<p>TODO</p>
+<div class="section" id="scale-properties">
+<h2>Scale Properties<a class="headerlink" href="#scale-properties" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="attributes">
-<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
-<p>Attribute facts specify properties of objects. For example, the number of rows in the dataset in this function form is <code class="docutils literal notranslate"><span class="pre">attribute(number_rows,root,42).</span></code> (read as <em>the number of rows (on the root object) is 42</em>). Property names can be tuples, which allow us to distinguish the same property that exists on different objects. For example <code class="docutils literal notranslate"><span class="pre">attribute((field,type),f1,number).</span></code> specifies the type of a field (here <code class="docutils literal notranslate"><span class="pre">f1</span></code>) while <code class="docutils literal notranslate"><span class="pre">attribute((mark,type),m1,bar).</span></code> specifies the mark type (here of <code class="docutils literal notranslate"><span class="pre">m1</span></code>).</p>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
-</div>
-<div class="section" id="draco-s-specification-format-for-visualizations">
-<h2>Draco’s Specification Format for Visualizations<a class="headerlink" href="#draco-s-specification-format-for-visualizations" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You could design your own description language and use it with Draco or extend the existing language we use here. If you add new information, Draco will not immediately use the new facts until you also add constraints over the facts.</p>
-</div>
-<p>Draco uses an encoding based on the Grammar of Graphics (GoG) <span id="id1">[<a class="reference internal" href="../bibliography.html#id5"><span>Wil12</span></a>]</span> and Vega-Lite <span id="id2">[<a class="reference internal" href="../bibliography.html#id3"><span>SMWH16</span></a>]</span>. While our specification format is inspired by Vega-Lite, Draco is not limited to the features Vega-Lite supports.</p>
-<p>At the core, a Draco program encodes visualizations in <a class="reference internal" href="view.html"><span class="doc std std-doc">views</span></a>. A view can contain one or more <a class="reference internal" href="mark.html"><span class="doc std std-doc">marks</span></a> that <a class="reference internal" href="encoding.html"><span class="doc std std-doc">encode</span></a> data and corresponding <a class="reference internal" href="scale.html"><span class="doc std std-doc">scales</span></a>. Besides the visualization, a Draco program can describe the <a class="reference internal" href="schema.html"><span class="doc std std-doc">data schema</span></a> and the primary <a class="reference internal" href="task.html"><span class="doc std std-doc">visualization task</span></a>. All of these definitions are extensible and you can add whatever other properties you care about to Draco.</p>
 </div>
 </div>
 
@@ -361,8 +337,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Introduction</a>
-    <a class='right-next' id="next-link" href="schema.html" title="next page">Data and Schema</a>
+    <a class='left-prev' id="prev-link" href="encoding.html" title="previous page">Encodings</a>
+    <a class='right-next' id="next-link" href="task.html" title="next page">Tasks</a>
 
         </div>
         

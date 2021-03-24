@@ -54,7 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Programs" href="programs.html" />
+    <link rel="next" title="Specifications" href="spec.html" />
     <link rel="prev" title="Overview" href="intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -105,22 +105,32 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../facts/schema.html">
-   Schema Description
+   Data and Schema
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../facts/view.html">
-   View Description
+   Views
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../facts/mark.html">
-   Mark Description
+   Marks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../facts/encoding.html">
+   Encodings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../facts/scale.html">
+   Scales
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../facts/task.html">
-   Task Description
+   Tasks
   </a>
  </li>
  <li class="toctree-l1">
@@ -146,8 +156,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="programs.html">
-   Programs
+  <a class="reference internal" href="spec.html">
+   Specifications
   </a>
  </li>
  <li class="toctree-l1">
@@ -156,8 +166,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="spec.html">
-   Specifications
+  <a class="reference internal" href="facts.html">
+   Fact Utils
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="programs.html">
+   Programs
   </a>
  </li>
 </ul>
@@ -411,8 +426,7 @@
 <p>We can then convert the schema dictionary into facts that Dracos constraint solver can use with <code class="docutils literal notranslate"><span class="pre">dict_to_facts</span></code>. The function returns a list of facts. The solver will be able to parse these facts and consider them in the recommendation process.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">program</span> <span class="o">=</span> <span class="n">dict_to_facts</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">program</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dict_to_facts</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -488,7 +502,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Overview</a>
-    <a class='right-next' id="next-link" href="programs.html" title="next page">Programs</a>
+    <a class='right-next' id="next-link" href="spec.html" title="next page">Specifications</a>
 
         </div>
         

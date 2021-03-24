@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mark Description &#8212; Draco</title>
+    <title>Marks &#8212; Draco</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Task Description" href="task.html" />
-    <link rel="prev" title="View Description" href="view.html" />
+    <link rel="next" title="Encodings" href="encoding.html" />
+    <link rel="prev" title="Views" href="view.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -105,22 +105,32 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="schema.html">
-   Schema Description
+   Data and Schema
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="view.html">
-   View Description
+   Views
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Mark Description
+   Marks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="encoding.html">
+   Encodings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scale.html">
+   Scales
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="task.html">
-   Task Description
+   Tasks
   </a>
  </li>
  <li class="toctree-l1">
@@ -146,8 +156,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../api/programs.html">
-   Programs
+  <a class="reference internal" href="../api/spec.html">
+   Specifications
   </a>
  </li>
  <li class="toctree-l1">
@@ -156,8 +166,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../api/spec.html">
-   Specifications
+  <a class="reference internal" href="../api/facts.html">
+   Fact Utils
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/programs.html">
+   Programs
   </a>
  </li>
 </ul>
@@ -283,9 +298,10 @@
         
               <div>
                 
-  <div class="section" id="mark-description">
-<h1>Mark Description<a class="headerlink" href="#mark-description" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="marks">
+<h1>Marks<a class="headerlink" href="#marks" title="Permalink to this headline">¶</a></h1>
 <p>The mark represents the graphical mark of the visualization. Draco uses an encoding based on the Grammar of Graphics (GoG) <span id="id1">[<a class="reference internal" href="../bibliography.html#id5"><span>Wil12</span></a>]</span>. In the GoG, marks are described as Geometric objects (“geoms” for short). We use the term mark as that’s the term Vega-Lite <span id="id2">[<a class="reference internal" href="../bibliography.html#id3"><span>SMWH16</span></a>]</span> uses.</p>
+<p>If you define multiple marks or a view has multiple marks, Draco assumes that the marks are layered (i.e. they are in the same view space in the chart).</p>
 <div class="section" id="mark-properties">
 <h2>Mark Properties<a class="headerlink" href="#mark-properties" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">(mark,type)</span></code>
@@ -324,8 +340,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="view.html" title="previous page">View Description</a>
-    <a class='right-next' id="next-link" href="task.html" title="next page">Task Description</a>
+    <a class='left-prev' id="prev-link" href="view.html" title="previous page">Views</a>
+    <a class='right-next' id="next-link" href="encoding.html" title="next page">Encodings</a>
 
         </div>
         
