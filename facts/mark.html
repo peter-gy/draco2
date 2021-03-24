@@ -123,6 +123,11 @@
    Task Description
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples.html">
+   Example Charts
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -273,12 +278,12 @@
 <p>The mark represents the graphical mark of the visualization. Draco uses an encoding based on the Grammar of Graphics (GoG) <span id="id1">[<a class="reference internal" href="../bibliography.html#id5"><span>Wil12</span></a>]</span>. In the GoG, marks are described as Geometric objects (“geoms” for short). We use the term mark as that’s the term Vega-Lite <span id="id2">[<a class="reference internal" href="../bibliography.html#id3"><span>SMWH16</span></a>]</span> uses.</p>
 <div class="section" id="mark-properties">
 <h2>Mark Properties<a class="headerlink" href="#mark-properties" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">mark_type</span></code>
-: The mark type.</p>
+<p><code class="docutils literal notranslate"><span class="pre">(mark,type)</span></code>
+: The mark type. One of <code class="docutils literal notranslate"><span class="pre">point</span></code>, <code class="docutils literal notranslate"><span class="pre">bar</span></code>, <code class="docutils literal notranslate"><span class="pre">line</span></code>, <code class="docutils literal notranslate"><span class="pre">area</span></code>, <code class="docutils literal notranslate"><span class="pre">text</span></code>, <code class="docutils literal notranslate"><span class="pre">tick</span></code>, or <code class="docutils literal notranslate"><span class="pre">rect</span></code>.</p>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span><span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">mark</span><span class="p">,</span><span class="s s-Atom">type</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="s s-Atom">tick</span><span class="p">).</span>
 </pre></div>
 </div>
 </div>

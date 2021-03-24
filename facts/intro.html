@@ -123,6 +123,11 @@
    Task Description
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples.html">
+   Example Charts
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -240,6 +245,33 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#draco-has-a-generic-specification-format">
+   Draco has a Generic Specification Format
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties">
+     Properties
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attributes">
+     Attributes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -255,10 +287,22 @@
 <p class="admonition-title">Note</p>
 <p>You could design your own description language and use it with Draco or extend the existing language we use here. If you add new information, Draco will not immediately use the new facts until you also add constraints over the facts.</p>
 </div>
-<p>While our encoding is inspired by Vega-Lite <span id="id1">[<a class="reference internal" href="../bibliography.html#id3"><span>SMWH16</span></a>]</span>, Draco is not limited to the features Vega-Lite supports.</p>
-<p>The constraint solver Clingo reasons about the facts that describe a visualization. The specific format we use to provide facts to the solver is as a <em>function</em> of the name <code class="docutils literal notranslate"><span class="pre">property</span></code> or <code class="docutils literal notranslate"><span class="pre">attribute</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While our specification format is inspired by Vega-Lite <span id="id1">[<a class="reference internal" href="../bibliography.html#id3"><span>SMWH16</span></a>]</span>, Draco is not limited to the features Vega-Lite supports.</p>
+</div>
+<div class="section" id="draco-has-a-generic-specification-format">
+<h2>Draco has a Generic Specification Format<a class="headerlink" href="#draco-has-a-generic-specification-format" title="Permalink to this headline">¶</a></h2>
+<p>The constraint solver Clingo reasons about the facts that describe a visualization. The specific format we use to describe facts to the solver is as a <em>function</em> of the name <code class="docutils literal notranslate"><span class="pre">property</span></code> or <code class="docutils literal notranslate"><span class="pre">attribute</span></code>.</p>
+<div class="section" id="properties">
+<h3>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
 <p>Properties describe what properties exist on an object. If a property has no parents, we use a special object <code class="docutils literal notranslate"><span class="pre">root</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">property(view,root,v1).</span></code> says that there is a view v1 on the root.</p>
-<p>Attribute facts specify properties of objects. For example, the number of rows in the dataset in this function form is <code class="docutils literal notranslate"><span class="pre">attribute(number_rows,root,42).</span></code> (read as <em>the number of rows (on the root object) is 42</em>).</p>
+</div>
+<div class="section" id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
+<p>Attribute facts specify properties of objects. For example, the number of rows in the dataset in this function form is <code class="docutils literal notranslate"><span class="pre">attribute(number_rows,root,42).</span></code> (read as <em>the number of rows (on the root object) is 42</em>). Property names can be tuples, which allow us to distinguish the same property that exists on different objects. For example <code class="docutils literal notranslate"><span class="pre">attribute((field,type),f1,number).</span></code> specifies the type of a field (here <code class="docutils literal notranslate"><span class="pre">f1</span></code>) while <code class="docutils literal notranslate"><span class="pre">attribute((mark,type),m1,bar).</span></code> specifies the mark type (here of <code class="docutils literal notranslate"><span class="pre">m1</span></code>).</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

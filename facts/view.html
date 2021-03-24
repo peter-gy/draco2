@@ -123,6 +123,11 @@
    Task Description
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples.html">
+   Example Charts
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -270,13 +275,25 @@
                 
   <div class="section" id="view-description">
 <h1>View Description<a class="headerlink" href="#view-description" title="Permalink to this headline">¶</a></h1>
-<p>TODO</p>
+<p>A view can group marks and scales together. You don’t always need a view. For example, if you only want to reason about a single mark or a layer of marks, you don’t need to have a view at all.</p>
 <div class="section" id="view-properties">
 <h2>View Properties<a class="headerlink" href="#view-properties" title="Permalink to this headline">¶</a></h2>
+<p>By default, views don’t have any properties.</p>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span>
+<p>Here, we define a single view <code class="docutils literal notranslate"><span class="pre">v</span></code>.</p>
+<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span><span class="nf">property</span><span class="p">(</span><span class="s s-Atom">view</span><span class="p">,</span><span class="s s-Atom">root</span><span class="p">,</span><span class="s s-Atom">v</span><span class="p">).</span>
+
+<span class="nf">property</span><span class="p">(</span><span class="s s-Atom">mark</span><span class="p">,</span><span class="s s-Atom">v</span><span class="p">,</span><span class="s s-Atom">m</span><span class="p">).</span>
+<span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">mark</span><span class="p">,</span><span class="s s-Atom">type</span><span class="p">),</span><span class="s s-Atom">m</span><span class="p">,</span><span class="s s-Atom">tick</span><span class="p">).</span>
+<span class="nf">property</span><span class="p">(</span><span class="s s-Atom">encoding</span><span class="p">,</span><span class="s s-Atom">m</span><span class="p">,</span><span class="s s-Atom">e1</span><span class="p">).</span>
+<span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">encoding</span><span class="p">,</span><span class="s s-Atom">channel</span><span class="p">),</span><span class="s s-Atom">e1</span><span class="p">,</span><span class="s s-Atom">x</span><span class="p">).</span>
+<span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">encoding</span><span class="p">,</span><span class="s s-Atom">field</span><span class="p">),</span><span class="s s-Atom">e1</span><span class="p">,</span><span class="s s-Atom">temperature</span><span class="p">).</span>
+
+<span class="nf">property</span><span class="p">(</span><span class="s s-Atom">scale</span><span class="p">,</span><span class="s s-Atom">v</span><span class="p">,</span><span class="mi">4</span><span class="p">).</span>
+<span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">scale</span><span class="p">,</span><span class="s s-Atom">channel</span><span class="p">),</span><span class="mi">4</span><span class="p">,</span><span class="s s-Atom">x</span><span class="p">).</span>
+<span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">scale</span><span class="p">,</span><span class="s s-Atom">type</span><span class="p">),</span><span class="mi">4</span><span class="p">,</span><span class="s s-Atom">linear</span><span class="p">).</span>
 </pre></div>
 </div>
 </div>
