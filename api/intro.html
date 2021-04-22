@@ -326,7 +326,8 @@ identifiers as numbers).</p>
 <dl class="py function">
 <dt id="draco.get_violations">
 <code class="sig-prename descclassname"><span class="pre">draco.</span></code><code class="sig-name descname"><span class="pre">get_violations</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.get_violations" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the list of violations for a given specification.</p>
+<dd><p>Get the list of violations for a given specification. Returns None if the
+problem is not satisfiable.</p>
 <p>Internally, Draco checks against the definitions, constraints, helpers,
 and hard constraints.</p>
 <dl class="field-list simple">

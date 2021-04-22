@@ -326,8 +326,8 @@
 <dd><p>The kind of ASP fact.</p>
 <dl class="simple">
 <dt>Attributes:</dt><dd><dl class="field-list simple">
-<dt class="field-odd">PROPERTY</dt>
-<dd class="field-odd"><p>a nested property (“is a” relationship)</p>
+<dt class="field-odd">ENTITY</dt>
+<dd class="field-odd"><p>a nested entity (“is a” relationship)</p>
 </dd>
 <dt class="field-even">ATTRIBUTE</dt>
 <dd class="field-even"><p>an attribute (value)</p>
@@ -379,7 +379,7 @@ identifiers as numbers).</p>
 <dt id="draco.fact_utils.make_fact">
 <code class="sig-prename descclassname"><span class="pre">draco.fact_utils.</span></code><code class="sig-name descname"><span class="pre">make_fact</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">typing.List</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.fact_utils.make_fact" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an ASP fact from a list of values. The function generates either
-attribute or property facts.</p>
+attribute or entity facts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
@@ -416,10 +416,10 @@ attribute or property facts.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;attribute(mark,root,bar).&#39;,
- &#39;property(encoding,root,0).&#39;,
+ &#39;entity(encoding,root,0).&#39;,
  &#39;attribute((encoding,channel),0,x).&#39;,
  &#39;attribute((encoding,field),0,condition).&#39;,
- &#39;property(encoding,root,1).&#39;,
+ &#39;entity(encoding,root,1).&#39;,
  &#39;attribute((encoding,channel),1,y).&#39;,
  &#39;attribute((encoding,aggregate),1,count).&#39;]
 </pre></div>
@@ -438,7 +438,7 @@ attribute or property facts.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Function(&#39;attribute&#39;, [Function(&#39;mark&#39;, [], True), Function(&#39;root&#39;, [], True), Function(&#39;bar&#39;, [], True)], True), Function(&#39;attribute&#39;, [Function(&#39;&#39;, [Function(&#39;encoding&#39;, [], True), Function(&#39;channel&#39;, [], True)], True), Number(0), Function(&#39;x&#39;, [], True)], True), Function(&#39;attribute&#39;, [Function(&#39;&#39;, [Function(&#39;encoding&#39;, [], True), Function(&#39;field&#39;, [], True)], True), Number(0), Function(&#39;condition&#39;, [], True)], True), Function(&#39;attribute&#39;, [Function(&#39;&#39;, [Function(&#39;encoding&#39;, [], True), Function(&#39;channel&#39;, [], True)], True), Number(1), Function(&#39;y&#39;, [], True)], True), Function(&#39;attribute&#39;, [Function(&#39;&#39;, [Function(&#39;encoding&#39;, [], True), Function(&#39;aggregate&#39;, [], True)], True), Number(1), Function(&#39;count&#39;, [], True)], True), Function(&#39;property&#39;, [Function(&#39;encoding&#39;, [], True), Function(&#39;root&#39;, [], True), Number(0)], True), Function(&#39;property&#39;, [Function(&#39;encoding&#39;, [], True), Function(&#39;root&#39;, [], True), Number(1)], True)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Function(&#39;attribute&#39;, [Function(&#39;mark&#39;, [], True), Function(&#39;root&#39;, [], True), Function(&#39;bar&#39;, [], True)], True), Function(&#39;attribute&#39;, [Function(&#39;&#39;, [Function(&#39;encoding&#39;, [], True), Function(&#39;channel&#39;, [], True)], True), Number(0), Function(&#39;x&#39;, [], True)], True), Function(&#39;attribute&#39;, [Function(&#39;&#39;, [Function(&#39;encoding&#39;, [], True), Function(&#39;field&#39;, [], True)], True), Number(0), Function(&#39;condition&#39;, [], True)], True), Function(&#39;attribute&#39;, [Function(&#39;&#39;, [Function(&#39;encoding&#39;, [], True), Function(&#39;channel&#39;, [], True)], True), Number(1), Function(&#39;y&#39;, [], True)], True), Function(&#39;attribute&#39;, [Function(&#39;&#39;, [Function(&#39;encoding&#39;, [], True), Function(&#39;aggregate&#39;, [], True)], True), Number(1), Function(&#39;count&#39;, [], True)], True), Function(&#39;entity&#39;, [Function(&#39;encoding&#39;, [], True), Function(&#39;root&#39;, [], True), Number(0)], True), Function(&#39;entity&#39;, [Function(&#39;encoding&#39;, [], True), Function(&#39;root&#39;, [], True), Number(1)], True)]
 {&#39;encoding&#39;: [{&#39;channel&#39;: &#39;x&#39;, &#39;field&#39;: &#39;condition&#39;},
               {&#39;aggregate&#39;: &#39;count&#39;, &#39;channel&#39;: &#39;y&#39;}],
  &#39;mark&#39;: &#39;bar&#39;}

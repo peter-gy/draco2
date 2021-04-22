@@ -339,7 +339,8 @@ and hard constraints.</p>
 <dl class="py function">
 <dt id="draco.spec.get_violations">
 <code class="sig-prename descclassname"><span class="pre">draco.spec.</span></code><code class="sig-name descname"><span class="pre">get_violations</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.spec.get_violations" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the list of violations for a given specification.</p>
+<dd><p>Get the list of violations for a given specification. Returns None if the
+problem is not satisfiable.</p>
 <p>Internally, Draco checks against the definitions, constraints, helpers,
 and hard constraints.</p>
 <dl class="field-list simple">
@@ -363,17 +364,17 @@ and hard constraints.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valid_spec</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">attribute(number_rows,root,100).</span>
-<span class="s2">property(field,root,f1).</span>
+<span class="s2">entity(field,root,f1).</span>
 <span class="s2">attribute((field,name),f1,temperature).</span>
 <span class="s2">attribute((field,type),f1number).</span>
 
-<span class="s2">property(mark,root,m1).</span>
+<span class="s2">entity(mark,root,m1).</span>
 <span class="s2">attribute((mark,type),m1,tick).</span>
-<span class="s2">property(encoding,m1,e1).</span>
+<span class="s2">entity(encoding,m1,e1).</span>
 <span class="s2">attribute((encoding,channel),e1,x).</span>
 <span class="s2">attribute((encoding,field),e1,temperature).</span>
 
-<span class="s2">property(scale,root,sx).</span>
+<span class="s2">entity(scale,root,sx).</span>
 <span class="s2">attribute((scale,channel),sx,x).</span>
 <span class="s2">attribute((scale,type),sx,linear).</span>
 <span class="s2">&quot;&quot;&quot;</span>
@@ -409,18 +410,18 @@ and hard constraints.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">invalid_spec</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">attribute(number_rows,root,100).</span>
-<span class="s2">property(field,root,f1).</span>
+<span class="s2">entity(field,root,f1).</span>
 <span class="s2">attribute((field,name),f1,temperature).</span>
 <span class="s2">attribute((field,type),f1number).</span>
 
-<span class="s2">property(mark,root,m1).</span>
+<span class="s2">entity(mark,root,m1).</span>
 <span class="si">% i</span><span class="s2">nvalid mark</span>
 <span class="s2">attribute((mark,type),m1,invalid).</span>
-<span class="s2">property(encoding,m1,e1).</span>
+<span class="s2">entity(encoding,m1,e1).</span>
 <span class="s2">attribute((encoding,channel),e1,x).</span>
 <span class="s2">attribute((encoding,field),e1,temperature).</span>
 
-<span class="s2">property(scale,root,sx).</span>
+<span class="s2">entity(scale,root,sx).</span>
 <span class="s2">attribute((scale,channel),sx,x).</span>
 <span class="s2">attribute((scale,type),sx,linear).</span>
 <span class="s2">&quot;&quot;&quot;</span>

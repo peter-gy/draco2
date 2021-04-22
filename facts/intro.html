@@ -282,8 +282,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#properties">
-     Properties
+    <a class="reference internal nav-link" href="#entities">
+     Entities
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -315,14 +315,14 @@
 <p>To express knowledge about visualizations, we first need a language to describe visualizations. Draco describes visualizations and context around them (e.g. properties of the data and task) as <em>facts</em>. In this section, we will describe the kinds of facts we chose for Draco.</p>
 <div class="section" id="draco-has-a-generic-specification-format">
 <h2>Draco has a Generic Specification Format<a class="headerlink" href="#draco-has-a-generic-specification-format" title="Permalink to this headline">¶</a></h2>
-<p>The constraint solver Clingo reasons about the facts that describe a visualization. The specific format we use to describe facts to the solver is as a <em>function</em> of the name <code class="docutils literal notranslate"><span class="pre">property</span></code> or <code class="docutils literal notranslate"><span class="pre">attribute</span></code>.</p>
-<div class="section" id="properties">
-<h3>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
-<p>Properties describe what properties exist on an object. If a property has no parents, we use a special object <code class="docutils literal notranslate"><span class="pre">root</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">property(view,root,v1).</span></code> says that there is a view v1 on the root.</p>
+<p>The constraint solver Clingo reasons about the facts that describe a visualization. The specific format we use to describe facts to the solver is as a <em>function</em> of the name <code class="docutils literal notranslate"><span class="pre">entity</span></code> or <code class="docutils literal notranslate"><span class="pre">attribute</span></code>.</p>
+<div class="section" id="entities">
+<h3>Entities<a class="headerlink" href="#entities" title="Permalink to this headline">¶</a></h3>
+<p>Entities describe objects. The facts <code class="docutils literal notranslate"><span class="pre">entity</span></code> describes what other entities are associates with an entity. If a entity has no parents, we use a special identifier <code class="docutils literal notranslate"><span class="pre">root</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">entity(view,root,v1).</span></code> says that there is a view v1 on the root.</p>
 </div>
 <div class="section" id="attributes">
 <h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
-<p>Attribute facts specify properties of objects. For example, the number of rows in the dataset in this function form is <code class="docutils literal notranslate"><span class="pre">attribute(number_rows,root,42).</span></code> (read as <em>the number of rows (on the root object) is 42</em>). Property names can be tuples, which allow us to distinguish the same property that exists on different objects. For example <code class="docutils literal notranslate"><span class="pre">attribute((field,type),f1,number).</span></code> specifies the type of a field (here <code class="docutils literal notranslate"><span class="pre">f1</span></code>) while <code class="docutils literal notranslate"><span class="pre">attribute((mark,type),m1,bar).</span></code> specifies the mark type (here of <code class="docutils literal notranslate"><span class="pre">m1</span></code>).</p>
+<p>Attribute facts specify properties of entities. For example, the number of rows in the dataset in this function form is <code class="docutils literal notranslate"><span class="pre">attribute(number_rows,root,42).</span></code> (read as <em>the number of rows (on the root entity) is 42</em>). Attribute names can be tuples, which allow us to distinguish the same attribute that exists on different entities. For example <code class="docutils literal notranslate"><span class="pre">attribute((field,type),f1,number).</span></code> specifies the type of a field (here <code class="docutils literal notranslate"><span class="pre">f1</span></code>) while <code class="docutils literal notranslate"><span class="pre">attribute((mark,type),m1,bar).</span></code> specifies the mark type (here of <code class="docutils literal notranslate"><span class="pre">m1</span></code>).</p>
 </div>
 </div>
 <div class="section" id="draco-s-specification-format-for-visualizations">
