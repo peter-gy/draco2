@@ -338,6 +338,25 @@ An answer set is a list of Clingo Symbols.</p>
 </dl>
 </dd></dl>
 
+<dl class="py class">
+<dt id="draco.run.Observer">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">draco.run.</span></code><code class="sig-name descname"><span class="pre">Observer</span></code><a class="headerlink" href="#draco.run.Observer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="draco.run.Observer.minimize">
+<code class="sig-name descname"><span class="pre">minimize</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">priority</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">literals</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.run.Observer.minimize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Observe minimize directives (or weak constraints) passed to the
+solver.</p>
+<dl class="simple">
+<dt>priority</dt><dd><p>The priority of the directive.</p>
+</dd>
+<dt>literals</dt><dd><p>List of weighted literals whose sum to minimize (pairs of literal
+and weight).</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py function">
 <dt id="draco.run.is_satisfiable">
 <code class="sig-prename descclassname"><span class="pre">draco.run.</span></code><code class="sig-name descname"><span class="pre">is_satisfiable</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.run.is_satisfiable" title="Permalink to this definition">¶</a></dt>
@@ -358,7 +377,7 @@ concatenated.</p>
 
 <dl class="py function">
 <dt id="draco.run.run_clingo">
-<code class="sig-prename descclassname"><span class="pre">draco.run.</span></code><code class="sig-name descname"><span class="pre">run_clingo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.run.run_clingo" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">draco.run.</span></code><code class="sig-name descname"><span class="pre">run_clingo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topK</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.run.run_clingo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run the solver and yield the models.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
