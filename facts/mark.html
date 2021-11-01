@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -70,6 +70,10 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../_static/logo-light.png" class="logo" alt="logo">
       
@@ -294,7 +298,7 @@
         
               <div>
                 
-  <div class="section" id="marks">
+  <div class="tex2jax_ignore mathjax_ignore section" id="marks">
 <h1>Marks<a class="headerlink" href="#marks" title="Permalink to this headline">¶</a></h1>
 <p>The mark represents the graphical mark of the visualization. Draco uses an encoding based on the Grammar of Graphics (GoG) <span id="id1">[<a class="reference internal" href="../bibliography.html#id5">Wil12</a>]</span>. In the GoG, marks are described as Geometric objects (“geoms” for short). We use the term mark as that’s the term Vega-Lite <span id="id2">[<a class="reference internal" href="../bibliography.html#id3">SMWH16</a>]</span> uses.</p>
 <p>If you define multiple marks or a view has multiple marks, Draco assumes that the marks are layered (i.e. they are in the same view space in the chart).</p>
@@ -363,7 +367,7 @@
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
