@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Overview &#8212; Draco</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,19 +31,19 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -54,7 +54,10 @@
     <link rel="next" title="Read Data and Generate the Schema" href="schema.html" />
     <link rel="prev" title="Example Charts" href="../facts/examples.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -93,7 +96,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Facts
  </span>
@@ -140,7 +143,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   API
  </span>
@@ -177,7 +180,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Reference
  </span>
@@ -284,8 +287,8 @@
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
 <p>Draco exposes the following methods.</p>
 <span class="target" id="module-draco"></span><dl class="py function">
-<dt id="draco.answer_set_to_dict">
-<code class="sig-prename descclassname"><span class="pre">draco.</span></code><code class="sig-name descname"><span class="pre">answer_set_to_dict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">answer_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'root'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.answer_set_to_dict" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="draco.answer_set_to_dict">
+<span class="sig-prename descclassname"><span class="pre">draco.</span></span><span class="sig-name descname"><span class="pre">answer_set_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">answer_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'root'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.answer_set_to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>A generic decoder that converts an answer set into a nested data structure.
 The inverse of this function is <code class="code docutils literal notranslate"><span class="pre">dict_to_facts</span></code>.</p>
 <dl class="field-list simple">
@@ -296,8 +299,8 @@ The inverse of this function is <code class="code docutils literal notranslate">
 </dd></dl>
 
 <dl class="py function">
-<dt id="draco.check_spec">
-<code class="sig-prename descclassname"><span class="pre">draco.</span></code><code class="sig-name descname"><span class="pre">check_spec</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.check_spec" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="draco.check_spec">
+<span class="sig-prename descclassname"><span class="pre">draco.</span></span><span class="sig-name descname"><span class="pre">check_spec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.check_spec" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks the spec against the hard constraints.</p>
 <p>Internally, Draco checks against the definitions, constraints, helpers,
 and hard constraints.</p>
@@ -312,8 +315,8 @@ and hard constraints.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="draco.dict_to_facts">
-<code class="sig-prename descclassname"><span class="pre">draco.</span></code><code class="sig-name descname"><span class="pre">dict_to_facts</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'root'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_generator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.dict_to_facts" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="draco.dict_to_facts">
+<span class="sig-prename descclassname"><span class="pre">draco.</span></span><span class="sig-name descname"><span class="pre">dict_to_facts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'root'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_generator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.dict_to_facts" title="Permalink to this definition">¶</a></dt>
 <dd><p>A generic encoder for dictionaries as answer set programming facts.</p>
 <p>The encoder can convert dictionaries as well as lists (generating
 identifiers as numbers).</p>
@@ -326,8 +329,8 @@ identifiers as numbers).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="draco.get_violations">
-<code class="sig-prename descclassname"><span class="pre">draco.</span></code><code class="sig-name descname"><span class="pre">get_violations</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.get_violations" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="draco.get_violations">
+<span class="sig-prename descclassname"><span class="pre">draco.</span></span><span class="sig-name descname"><span class="pre">get_violations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.get_violations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the list of violations for a given specification. Returns None if the
 problem is not satisfiable.</p>
 <p>Internally, Draco checks against the definitions, constraints, helpers,
@@ -340,8 +343,8 @@ and hard constraints.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="draco.is_satisfiable">
-<code class="sig-prename descclassname"><span class="pre">draco.</span></code><code class="sig-name descname"><span class="pre">is_satisfiable</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.is_satisfiable" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="draco.is_satisfiable">
+<span class="sig-prename descclassname"><span class="pre">draco.</span></span><span class="sig-name descname"><span class="pre">is_satisfiable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.is_satisfiable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks whether the program is satisfiable</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -358,8 +361,8 @@ concatenated.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="draco.run_clingo">
-<code class="sig-prename descclassname"><span class="pre">draco.</span></code><code class="sig-name descname"><span class="pre">run_clingo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topK</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.run_clingo" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="draco.run_clingo">
+<span class="sig-prename descclassname"><span class="pre">draco.</span></span><span class="sig-name descname"><span class="pre">run_clingo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topK</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.run_clingo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run the solver and yield the models.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -379,8 +382,8 @@ concatenated.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt id="draco.schema_from_dataframe">
-<code class="sig-prename descclassname"><span class="pre">draco.</span></code><code class="sig-name descname"><span class="pre">schema_from_dataframe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">df</span></em>, <em class="sig-param"><span class="pre">parse_data_type=&lt;function</span> <span class="pre">dtype_to_field_type&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.schema_from_dataframe" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="draco.schema_from_dataframe">
+<span class="sig-prename descclassname"><span class="pre">draco.</span></span><span class="sig-name descname"><span class="pre">schema_from_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_data_type=&lt;function</span> <span class="pre">dtype_to_field_type&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.schema_from_dataframe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read schema information from the given Pandas dataframe.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -399,8 +402,8 @@ concatenated.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt id="draco.schema_from_file">
-<code class="sig-prename descclassname"><span class="pre">draco.</span></code><code class="sig-name descname"><span class="pre">schema_from_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">file_path</span></em>, <em class="sig-param"><span class="pre">parse_data_type=&lt;function</span> <span class="pre">dtype_to_field_type&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.schema_from_file" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="draco.schema_from_file">
+<span class="sig-prename descclassname"><span class="pre">draco.</span></span><span class="sig-name descname"><span class="pre">schema_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_data_type=&lt;function</span> <span class="pre">dtype_to_field_type&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.schema_from_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read schema information from the given CSV or JSON file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -446,31 +449,22 @@ concatenated.</p></li>
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="../facts/examples.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Example Charts</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../facts/examples.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Example Charts</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="schema.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Read Data and Generate the Schema</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="schema.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Read Data and Generate the Schema</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -491,8 +485,7 @@ concatenated.</p></li>
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
