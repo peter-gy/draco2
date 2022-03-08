@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Overview" href="../api/intro.html" />
-    <link rel="prev" title="Tasks" href="task.html" />
+    <link rel="prev" title="Facets" href="facet.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -137,6 +137,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="task.html">
    Tasks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="facet.html">
+   Facets
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -364,6 +369,23 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#facets">
+   Facets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#facet-scatterplot-into-columns">
+     Facet Scatterplot into Columns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#facet-scatterplot-by-binned-data-into-columns">
+     Facet Scatterplot by Binned Data into Columns
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#multiple-views">
    Multiple Views
   </a>
@@ -460,6 +482,23 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bar-with-a-tick">
      Bar with a Tick
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#facets">
+   Facets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#facet-scatterplot-into-columns">
+     Facet Scatterplot into Columns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#facet-scatterplot-by-binned-data-into-columns">
+     Facet Scatterplot by Binned Data into Columns
     </a>
    </li>
   </ul>
@@ -999,6 +1038,154 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<div class="section" id="facets">
+<h2>Facets<a class="headerlink" href="#facets" title="Permalink to this headline">¶</a></h2>
+<p>Facet produces horizontal or vertical small multiples.</p>
+<div class="section" id="facet-scatterplot-into-columns">
+<h3>Facet Scatterplot into Columns<a class="headerlink" href="#facet-scatterplot-into-columns" title="Permalink to this headline">¶</a></h3>
+<p><img alt="chart" src="../_images/facet.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;wind&quot;</span><span class="p">,</span> <span class="s2">&quot;condition&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span><span class="p">},</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;facet&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;col&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;attribute(number_rows,root,100).&#39;,
+ &#39;entity(field,root,temperature).&#39;,
+ &#39;attribute((field,name),temperature,temperature).&#39;,
+ &#39;attribute((field,type),temperature,number).&#39;,
+ &#39;entity(field,root,wind).&#39;,
+ &#39;attribute((field,name),wind,wind).&#39;,
+ &#39;attribute((field,type),wind,number).&#39;,
+ &#39;entity(field,root,condition).&#39;,
+ &#39;attribute((field,name),condition,condition).&#39;,
+ &#39;attribute((field,type),condition,string).&#39;,
+ &#39;entity(mark,root,0).&#39;,
+ &#39;attribute((mark,type),0,point).&#39;,
+ &#39;entity(encoding,0,1).&#39;,
+ &#39;attribute((encoding,channel),1,x).&#39;,
+ &#39;attribute((encoding,field),1,temperature).&#39;,
+ &#39;entity(encoding,0,2).&#39;,
+ &#39;attribute((encoding,channel),2,y).&#39;,
+ &#39;attribute((encoding,field),2,wind).&#39;,
+ &#39;entity(scale,root,3).&#39;,
+ &#39;attribute((scale,channel),3,x).&#39;,
+ &#39;attribute((scale,type),3,linear).&#39;,
+ &#39;entity(scale,root,4).&#39;,
+ &#39;attribute((scale,channel),4,y).&#39;,
+ &#39;attribute((scale,type),4,linear).&#39;,
+ &#39;entity(facet,root,5).&#39;,
+ &#39;attribute((facet,channel),5,col).&#39;,
+ &#39;attribute((facet,field),5,condition).&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="facet-scatterplot-by-binned-data-into-columns">
+<h3>Facet Scatterplot by Binned Data into Columns<a class="headerlink" href="#facet-scatterplot-by-binned-data-into-columns" title="Permalink to this headline">¶</a></h3>
+<p><img alt="chart" src="../_images/facet_bin.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;wind&quot;</span><span class="p">,</span> <span class="s2">&quot;condition&quot;</span><span class="p">]),</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;point&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;wind&quot;</span><span class="p">},</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;linear&quot;</span><span class="p">},</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;facet&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;col&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;binning&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>attribute(number_rows,root,100).
+entity(field,root,temperature).
+attribute((field,name),temperature,temperature).
+attribute((field,type),temperature,number).
+entity(field,root,wind).
+attribute((field,name),wind,wind).
+attribute((field,type),wind,number).
+entity(field,root,condition).
+attribute((field,name),condition,condition).
+attribute((field,type),condition,string).
+entity(mark,root,0).
+attribute((mark,type),0,point).
+entity(encoding,0,1).
+attribute((encoding,channel),1,x).
+attribute((encoding,field),1,condition).
+entity(encoding,0,2).
+attribute((encoding,channel),2,y).
+attribute((encoding,field),2,wind).
+entity(scale,root,3).
+attribute((scale,channel),3,x).
+attribute((scale,type),3,linear).
+entity(scale,root,4).
+attribute((scale,channel),4,y).
+attribute((scale,type),4,linear).
+entity(facet,root,5).
+attribute((facet,channel),5,col).
+attribute((facet,field),5,temperature).
+attribute((facet,binning),5,10).
+[&#39;scale_type_data_type&#39;]
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2726</span><span class="o">/</span><span class="mf">3203694832.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">show</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;wind&quot;</span><span class="p">,</span> <span class="s2">&quot;condition&quot;</span><span class="p">]),</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="p">{</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>             <span class="p">{</span>
+
+<span class="nn">/tmp/ipykernel_2726/1848947746.py</span> in <span class="ni">show</span><span class="nt">(*args)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">prog</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="nb">print</span><span class="p">(</span><span class="n">get_violations</span><span class="p">(</span><span class="n">prog</span><span class="p">))</span>
+<span class="ne">---&gt; </span><span class="mi">10</span>         <span class="k">assert</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Invalid spec&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="k">return</span> <span class="n">prog</span>
+
+<span class="ne">AssertionError</span>: Invalid spec
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="multiple-views">
 <h2>Multiple Views<a class="headerlink" href="#multiple-views" title="Permalink to this headline">¶</a></h2>
 <p>Any of the specifications above are a single view. You can also create multiple views.</p>
@@ -1182,11 +1369,11 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="task.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="facet.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Tasks</p>
+            <p class="prev-next-title">Facets</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../api/intro.html" title="next page">
