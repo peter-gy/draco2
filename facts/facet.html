@@ -342,20 +342,32 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="facet-properties">
 <h2>Facet Properties<a class="headerlink" href="#facet-properties" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">(facet,channel)</span></code>
-: The facet channel. Can be one of <code class="docutils literal notranslate"><span class="pre">col</span></code>, and <code class="docutils literal notranslate"><span class="pre">row</span></code>.</p>
+: The facet channel. Can be one of <code class="docutils literal notranslate"><span class="pre">col</span></code> and <code class="docutils literal notranslate"><span class="pre">row</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">(facet,field)</span></code>
 : The facet field.</p>
 <p><code class="docutils literal notranslate"><span class="pre">(facet,binning)</span></code>
-: Binning a numeric field for faceting.</p>
+: Binning a numeric field for faceting. A facet field has to be binned if it’s numeric.```</p>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span><span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">facet</span><span class="p">,</span><span class="s s-Atom">root</span><span class="p">,</span><span class="s s-Atom">f</span><span class="p">).</span>
+<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span><span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">root</span><span class="p">,</span><span class="s s-Atom">condition</span><span class="p">).</span>
+<span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">name</span><span class="p">),</span><span class="s s-Atom">condition</span><span class="p">,</span><span class="s s-Atom">condition</span><span class="p">).</span>
+<span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">type</span><span class="p">),</span><span class="s s-Atom">condition</span><span class="p">,</span><span class="s s-Atom">string</span><span class="p">).</span>
+
+<span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">view</span><span class="p">,</span><span class="s s-Atom">root</span><span class="p">,</span><span class="s s-Atom">v</span><span class="p">).</span>
+
+<span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">facet</span><span class="p">,</span><span class="s s-Atom">v</span><span class="p">,</span><span class="s s-Atom">f</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">facet</span><span class="p">,</span><span class="s s-Atom">channel</span><span class="p">),</span><span class="s s-Atom">f</span><span class="p">,</span><span class="s s-Atom">col</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">facet</span><span class="p">,</span><span class="s s-Atom">field</span><span class="p">),</span><span class="s s-Atom">f</span><span class="p">,</span><span class="s s-Atom">condition</span><span class="p">).</span>
 </pre></div>
 </div>
-<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span><span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">facet</span><span class="p">,</span><span class="s s-Atom">root</span><span class="p">,</span><span class="s s-Atom">f</span><span class="p">).</span>
+<div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span><span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">root</span><span class="p">,</span><span class="s s-Atom">temperature</span><span class="p">).</span>
+<span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">name</span><span class="p">),</span><span class="s s-Atom">temperature</span><span class="p">,</span><span class="s s-Atom">temperature</span><span class="p">).</span>
+<span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">field</span><span class="p">,</span><span class="s s-Atom">type</span><span class="p">),</span><span class="s s-Atom">temperature</span><span class="p">,</span><span class="s s-Atom">number</span><span class="p">).</span>
+
+<span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">view</span><span class="p">,</span><span class="s s-Atom">root</span><span class="p">,</span><span class="s s-Atom">v</span><span class="p">).</span>
+
+<span class="nf">entity</span><span class="p">(</span><span class="s s-Atom">facet</span><span class="p">,</span><span class="s s-Atom">v</span><span class="p">,</span><span class="s s-Atom">f</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">facet</span><span class="p">,</span><span class="s s-Atom">channel</span><span class="p">),</span><span class="s s-Atom">f</span><span class="p">,</span><span class="s s-Atom">col</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">facet</span><span class="p">,</span><span class="s s-Atom">field</span><span class="p">),</span><span class="s s-Atom">f</span><span class="p">,</span><span class="s s-Atom">temperature</span><span class="p">).</span>
 <span class="nf">attribute</span><span class="p">((</span><span class="s s-Atom">facet</span><span class="p">,</span><span class="s s-Atom">binning</span><span class="p">),</span><span class="s s-Atom">f</span><span class="p">,</span><span class="mi">10</span><span class="p">).</span>
