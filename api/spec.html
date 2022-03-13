@@ -404,15 +404,16 @@ and hard constraints.</p>
 <span class="s2">attribute(number_rows,root,100).</span>
 <span class="s2">entity(field,root,f1).</span>
 <span class="s2">attribute((field,name),f1,temperature).</span>
-<span class="s2">attribute((field,type),f1number).</span>
+<span class="s2">attribute((field,type),f1,number).</span>
 
-<span class="s2">entity(mark,root,m1).</span>
+<span class="s2">entity(view,root,v).</span>
+<span class="s2">entity(mark,v,m1).</span>
 <span class="s2">attribute((mark,type),m1,tick).</span>
 <span class="s2">entity(encoding,m1,e1).</span>
 <span class="s2">attribute((encoding,channel),e1,x).</span>
-<span class="s2">attribute((encoding,field),e1,temperature).</span>
+<span class="s2">attribute((encoding,field),e1,f1).</span>
 
-<span class="s2">entity(scale,root,sx).</span>
+<span class="s2">entity(scale,v,sx).</span>
 <span class="s2">attribute((scale,channel),sx,x).</span>
 <span class="s2">attribute((scale,type),sx,linear).</span>
 <span class="s2">&quot;&quot;&quot;</span>
@@ -427,7 +428,7 @@ and hard constraints.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -439,7 +440,7 @@ and hard constraints.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;existing_field&#39;, &#39;invalid_domain&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
 </div>
@@ -450,16 +451,17 @@ and hard constraints.</p>
 <span class="s2">attribute(number_rows,root,100).</span>
 <span class="s2">entity(field,root,f1).</span>
 <span class="s2">attribute((field,name),f1,temperature).</span>
-<span class="s2">attribute((field,type),f1number).</span>
+<span class="s2">attribute((field,type),f1,number).</span>
 
-<span class="s2">entity(mark,root,m1).</span>
+<span class="s2">entity(view,root,v).</span>
+<span class="s2">entity(mark,v,m1).</span>
 <span class="si">% i</span><span class="s2">nvalid mark</span>
 <span class="s2">attribute((mark,type),m1,invalid).</span>
 <span class="s2">entity(encoding,m1,e1).</span>
 <span class="s2">attribute((encoding,channel),e1,x).</span>
-<span class="s2">attribute((encoding,field),e1,temperature).</span>
+<span class="s2">attribute((encoding,field),e1,f1).</span>
 
-<span class="s2">entity(scale,root,sx).</span>
+<span class="s2">entity(scale,v,sx).</span>
 <span class="s2">attribute((scale,channel),sx,x).</span>
 <span class="s2">attribute((scale,type),sx,linear).</span>
 <span class="s2">&quot;&quot;&quot;</span>
@@ -486,7 +488,7 @@ and hard constraints.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;existing_field&#39;, &#39;invalid_domain&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;invalid_domain&#39;]
 </pre></div>
 </div>
 </div>
