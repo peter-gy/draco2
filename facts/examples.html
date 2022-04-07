@@ -1541,55 +1541,36 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>attribute(number_rows,root,100).
-entity(field,root,temperature).
-attribute((field,name),temperature,temperature).
-attribute((field,type),temperature,number).
-entity(field,root,condition).
-attribute((field,name),condition,condition).
-attribute((field,type),condition,string).
-entity(view,root,0).
-entity(mark,0,1).
-attribute((mark,type),1,tick).
-entity(encoding,1,2).
-attribute((encoding,channel),2,y).
-attribute((encoding,field),2,temperature).
-entity(view,root,3).
-entity(mark,3,4).
-attribute((mark,type),4,bar).
-entity(encoding,4,5).
-attribute((encoding,channel),5,y).
-attribute((encoding,field),5,temperature).
-attribute((encoding,aggregate),5,mean).
-entity(encoding,4,6).
-attribute((encoding,channel),6,x).
-attribute((encoding,field),6,condition).
-entity(scale,3,7).
-attribute((scale,channel),7,x).
-attribute((scale,type),7,ordinal).
-entity(scale,root,8).
-attribute((scale,channel),8,y).
-attribute((scale,type),8,linear).
-attribute((scale,zero),8,true).
-[&#39;encoding_channel_without_scale&#39;]
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1885</span><span class="o">/</span><span class="mf">4093824199.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">show</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">data</span><span class="p">([</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;condition&quot;</span><span class="p">]),</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="p">{</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="p">[</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>             <span class="p">{</span>
-
-<span class="nn">/tmp/ipykernel_1885/1848947746.py</span> in <span class="ni">show</span><span class="nt">(*args)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">prog</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="nb">print</span><span class="p">(</span><span class="n">get_violations</span><span class="p">(</span><span class="n">prog</span><span class="p">))</span>
-<span class="ne">---&gt; </span><span class="mi">10</span>         <span class="k">assert</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Invalid spec&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="k">return</span> <span class="n">prog</span>
-
-<span class="ne">AssertionError</span>: Invalid spec
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;attribute(number_rows,root,100).&#39;,
+ &#39;entity(field,root,temperature).&#39;,
+ &#39;attribute((field,name),temperature,temperature).&#39;,
+ &#39;attribute((field,type),temperature,number).&#39;,
+ &#39;entity(field,root,condition).&#39;,
+ &#39;attribute((field,name),condition,condition).&#39;,
+ &#39;attribute((field,type),condition,string).&#39;,
+ &#39;entity(view,root,0).&#39;,
+ &#39;entity(mark,0,1).&#39;,
+ &#39;attribute((mark,type),1,tick).&#39;,
+ &#39;entity(encoding,1,2).&#39;,
+ &#39;attribute((encoding,channel),2,y).&#39;,
+ &#39;attribute((encoding,field),2,temperature).&#39;,
+ &#39;entity(view,root,3).&#39;,
+ &#39;entity(mark,3,4).&#39;,
+ &#39;attribute((mark,type),4,bar).&#39;,
+ &#39;entity(encoding,4,5).&#39;,
+ &#39;attribute((encoding,channel),5,y).&#39;,
+ &#39;attribute((encoding,field),5,temperature).&#39;,
+ &#39;attribute((encoding,aggregate),5,mean).&#39;,
+ &#39;entity(encoding,4,6).&#39;,
+ &#39;attribute((encoding,channel),6,x).&#39;,
+ &#39;attribute((encoding,field),6,condition).&#39;,
+ &#39;entity(scale,3,7).&#39;,
+ &#39;attribute((scale,channel),7,x).&#39;,
+ &#39;attribute((scale,type),7,ordinal).&#39;,
+ &#39;entity(scale,root,8).&#39;,
+ &#39;attribute((scale,channel),8,y).&#39;,
+ &#39;attribute((scale,type),8,linear).&#39;,
+ &#39;attribute((scale,zero),8,true).&#39;]
 </pre></div>
 </div>
 </div>
