@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Fact Utils &#8212; Draco</title>
+    <title>Visualization Recommendation &#8212; Draco</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Programs" href="programs.html" />
-    <link rel="prev" title="Run" href="run.html" />
+    <link rel="next" title="Guides" href="../guide.html" />
+    <link rel="prev" title="Programs" href="../api/programs.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -170,34 +170,34 @@ const thebe_selector_output = ".output, .cell_output"
   API
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
+  <a class="reference internal" href="../api/intro.html">
    Overview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="draco.html">
+  <a class="reference internal" href="../api/draco.html">
    Draco Helper Class
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="schema.html">
+  <a class="reference internal" href="../api/schema.html">
    Read Data and Generate the Schema
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="run.html">
+  <a class="reference internal" href="../api/run.html">
    Run
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/facts.html">
    Fact Utils
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="programs.html">
+  <a class="reference internal" href="../api/programs.html">
    Programs
   </a>
  </li>
@@ -207,9 +207,9 @@ const thebe_selector_output = ".output, .cell_output"
   Applications
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../applications/recommendation.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Visualization Recommendation
   </a>
  </li>
@@ -296,7 +296,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/cmudig/draco2/main?urlpath=lab/tree/docs/api/facts.ipynb"
+        <a href="https://mybinder.org/v2/gh/cmudig/draco2/main?urlpath=lab/tree/docs/applications/recommendation.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -356,7 +356,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/cmudig/draco2/issues/new?title=Issue%20on%20page%20%2Fapi/facts.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/cmudig/draco2/issues/new?title=Issue%20on%20page%20%2Fapplications/recommendation.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -373,7 +373,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/cmudig/draco2/edit/main/docs/api/facts.ipynb"
+        <a href="https://github.com/cmudig/draco2/edit/main/docs/applications/recommendation.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -401,7 +401,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/api/facts.ipynb"
+        <a href="../_sources/applications/recommendation.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -461,13 +461,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-draco.fact_utils">
-   Available functions
+  <a class="reference internal nav-link" href="#histogramm">
+   Histogramm
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#usage-example">
-   Usage Example
+  <a class="reference internal nav-link" href="#scatterplot">
+   Scatterplot
   </a>
  </li>
 </ul>
@@ -479,7 +479,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Fact Utils</h1>
+                <h1>Visualization Recommendation</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -490,13 +490,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-draco.fact_utils">
-   Available functions
+  <a class="reference internal nav-link" href="#histogramm">
+   Histogramm
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#usage-example">
-   Usage Example
+  <a class="reference internal nav-link" href="#scatterplot">
+   Scatterplot
   </a>
  </li>
 </ul>
@@ -509,132 +509,200 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="fact-utils">
-<h1>Fact Utils<a class="headerlink" href="#fact-utils" title="Permalink to this headline">#</a></h1>
-<p>Generating facts in the expected format can be tedious. To make it easier to put data into and get data our of Draco, we an API to convert nested data to facts and vice versa.</p>
-<section id="module-draco.fact_utils">
-<span id="available-functions"></span><h2>Available functions<a class="headerlink" href="#module-draco.fact_utils" title="Permalink to this headline">#</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="draco.fact_utils.FactKind">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">draco.fact_utils.</span></span><span class="sig-name descname"><span class="pre">FactKind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.fact_utils.FactKind" title="Permalink to this definition">#</a></dt>
-<dd><p>The kind of ASP fact.</p>
-<dl class="simple">
-<dt>Attributes:</dt><dd><dl class="field-list simple">
-<dt class="field-odd">ENTITY</dt>
-<dd class="field-odd"><p>a nested entity (“is a” relationship)</p>
-</dd>
-<dt class="field-even">ATTRIBUTE</dt>
-<dd class="field-even"><p>an attribute (value)</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="draco.fact_utils.answer_set_to_dict">
-<span class="sig-prename descclassname"><span class="pre">draco.fact_utils.</span></span><span class="sig-name descname"><span class="pre">answer_set_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">answer_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'root'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.fact_utils.answer_set_to_dict" title="Permalink to this definition">#</a></dt>
-<dd><p>A generic decoder that converts an answer set into a nested data structure.
-The inverse of this function is <code class="code docutils literal notranslate"><span class="pre">dict_to_facts</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="draco.fact_utils.collect_children">
-<span class="sig-prename descclassname"><span class="pre">draco.fact_utils.</span></span><span class="sig-name descname"><span class="pre">collect_children</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.fact_utils.collect_children" title="Permalink to this definition">#</a></dt>
-<dd><p>Helper function to collect the children for a name into a dictionary.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="draco.fact_utils.dict_to_facts">
-<span class="sig-prename descclassname"><span class="pre">draco.fact_utils.</span></span><span class="sig-name descname"><span class="pre">dict_to_facts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'root'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_generator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.fact_utils.dict_to_facts" title="Permalink to this definition">#</a></dt>
-<dd><p>A generic encoder for dictionaries as answer set programming facts.</p>
-<p>The encoder can convert dictionaries as well as lists (generating
-identifiers as numbers).</p>
-<p>The inverse of this function is <code class="code docutils literal notranslate"><span class="pre">answer_set_to_dict</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="draco.fact_utils.get_value">
-<span class="sig-prename descclassname"><span class="pre">draco.fact_utils.</span></span><span class="sig-name descname"><span class="pre">get_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.fact_utils.get_value" title="Permalink to this definition">#</a></dt>
-<dd><p>Get the value of a Clingo symbol.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="draco.fact_utils.make_fact">
-<span class="sig-prename descclassname"><span class="pre">draco.fact_utils.</span></span><span class="sig-name descname"><span class="pre">make_fact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.fact_utils.make_fact" title="Permalink to this definition">#</a></dt>
-<dd><p>Create an ASP fact from a list of values. The function generates either
-attribute or entity facts.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-<section id="usage-example">
-<h2>Usage Example<a class="headerlink" href="#usage-example" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="visualization-recommendation">
+<h1>Visualization Recommendation<a class="headerlink" href="#visualization-recommendation" title="Permalink to this headline">#</a></h1>
+<p>In these examples, we use Draco to recommend visualizations based on partial inputs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">draco</span> <span class="kn">import</span> <span class="n">dict_to_facts</span><span class="p">,</span> <span class="n">answer_set_to_dict</span><span class="p">,</span> <span class="n">run_clingo</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">draco</span> <span class="kn">import</span> <span class="n">Draco</span><span class="p">,</span> <span class="n">answer_set_to_dict</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facts</span> <span class="o">=</span> <span class="n">dict_to_facts</span><span class="p">(</span>
-    <span class="p">{</span>
-        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">},</span>
-        <span class="p">],</span>
-    <span class="p">}</span>
-<span class="p">)</span>
-<span class="n">facts</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;attribute(mark,root,bar).&#39;,
- &#39;entity(encoding,root,0).&#39;,
- &#39;attribute((encoding,channel),0,x).&#39;,
- &#39;attribute((encoding,field),0,condition).&#39;,
- &#39;entity(encoding,root,1).&#39;,
- &#39;attribute((encoding,channel),1,y).&#39;,
- &#39;attribute((encoding,aggregate),1,count).&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we can run Clingo and convert the model back into the nested representation</span>
 
-<span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">run_clingo</span><span class="p">(</span><span class="n">facts</span><span class="p">):</span>
-    <span class="n">answer_set</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">answer_set</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">answer_set</span><span class="p">)</span>
-    <span class="n">pprint</span><span class="p">(</span><span class="n">answer_set_to_dict</span><span class="p">(</span><span class="n">answer_set</span><span class="p">))</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">Draco</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="histogramm">
+<h2>Histogramm<a class="headerlink" href="#histogramm" title="Permalink to this headline">#</a></h2>
+<p>In this example, we tell Draco to show a binned chart. A possible visualization is a tick plot but because the tick marks would overlap, Draco adds an addicional count encoding.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../../draco/asp/examples/histogram.lp&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">hist_spec</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INPUT:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hist_spec</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OUTPUT:&quot;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">complete_spec</span><span class="p">(</span><span class="n">hist_spec</span><span class="p">))</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">answer_set_to_dict</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">answer_set</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;VIOLATED PREFERENCES:&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">count_preferences</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">model</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[attribute(mark,root,bar), attribute((encoding,channel),0,x), attribute((encoding,field),0,condition), attribute((encoding,channel),1,y), attribute((encoding,aggregate),1,count), entity(encoding,root,0), entity(encoding,root,1)]
-{&#39;encoding&#39;: [{&#39;channel&#39;: &#39;x&#39;, &#39;field&#39;: &#39;condition&#39;},
-              {&#39;aggregate&#39;: &#39;count&#39;, &#39;channel&#39;: &#39;y&#39;}],
- &#39;mark&#39;: &#39;bar&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INPUT:
+attribute(number_rows,root,100).
+
+entity(field,root,(f,0)).
+attribute((field,name),(f,0),temperature).
+attribute((field,type),(f,0),number).
+attribute((field,unique),(f,0),100).
+
+entity(view,root,(v,0)).
+
+entity(mark,(v,0),(m,0)).
+entity(encoding,(m,0),(e,0)).
+attribute((encoding,field),(e,0),(f,0)).
+attribute((encoding,binning),(e,0),10).
+
+#show entity/3.
+#show attribute/3.
+
+OUTPUT:
+{&#39;field&#39;: [{&#39;name&#39;: &#39;temperature&#39;, &#39;type&#39;: &#39;number&#39;, &#39;unique&#39;: 100}],
+ &#39;number_rows&#39;: 100,
+ &#39;task&#39;: &#39;summary&#39;,
+ &#39;view&#39;: [{&#39;mark&#39;: [{&#39;channel&#39;: &#39;y&#39;,
+                     &#39;discrete_size&#39;: 10,
+                     &#39;encoding&#39;: [{&#39;binning&#39;: 10,
+                                   &#39;channel&#39;: &#39;x&#39;,
+                                   &#39;encoding_cardinality&#39;: 10,
+                                   &#39;field&#39;: (&#39;f&#39;, 0),
+                                   &#39;scale_type&#39;: &#39;linear&#39;,
+                                   &#39;type&#39;: &#39;linear&#39;},
+                                  {&#39;aggregate&#39;: &#39;count&#39;,
+                                   &#39;channel&#39;: &#39;y&#39;,
+                                   &#39;scale_type&#39;: &#39;linear&#39;,
+                                   &#39;type&#39;: &#39;linear&#39;,
+                                   &#39;zero&#39;: &#39;true&#39;}],
+                     &#39;mark_channel_cont&#39;: &#39;y&#39;,
+                     &#39;mark_channel_discrete_or_binned&#39;: &#39;x&#39;,
+                     &#39;mark_encoding_cont&#39;: (&#39;e&#39;, 1),
+                     &#39;mark_encoding_discrete_or_binned&#39;: (&#39;e&#39;, 0),
+                     &#39;scale&#39;: (&#39;e&#39;, 0),
+                     &#39;type&#39;: &#39;bar&#39;,
+                     &#39;x_cardinality&#39;: 10}],
+           &#39;scale&#39;: [{&#39;aggregate&#39;: &#39;count&#39;,
+                      &#39;channel&#39;: &#39;y&#39;,
+                      &#39;scale_type&#39;: &#39;linear&#39;,
+                      &#39;type&#39;: &#39;linear&#39;,
+                      &#39;zero&#39;: &#39;true&#39;},
+                     {&#39;binning&#39;: 10,
+                      &#39;channel&#39;: &#39;x&#39;,
+                      &#39;encoding_cardinality&#39;: 10,
+                      &#39;field&#39;: (&#39;f&#39;, 0),
+                      &#39;scale_type&#39;: &#39;linear&#39;,
+                      &#39;type&#39;: &#39;linear&#39;}]}]}
+VIOLATED PREFERENCES:
+defaultdict(&lt;class &#39;int&#39;&gt;,
+            {&#39;aggregate&#39;: 1,
+             &#39;aggregate_count&#39;: 1,
+             &#39;bin&#39;: 1,
+             &#39;c_d_no_overlap_bar&#39;: 1,
+             &#39;encoding&#39;: 2,
+             &#39;encoding_field&#39;: 1,
+             &#39;linear_scale&#39;: 2,
+             &#39;linear_x&#39;: 1,
+             &#39;linear_y&#39;: 1,
+             &#39;summary_bar&#39;: 1,
+             &#39;summary_continuous_y&#39;: 1,
+             &#39;summary_discrete_x&#39;: 1})
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="scatterplot">
+<h2>Scatterplot<a class="headerlink" href="#scatterplot" title="Permalink to this headline">#</a></h2>
+<p>In this example, we tell Draco to show two continuous fields. The most effective visualization is a scatterplot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../../draco/asp/examples/scatter.lp&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">hist_spec</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INPUT:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hist_spec</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OUTPUT:&quot;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">complete_spec</span><span class="p">(</span><span class="n">hist_spec</span><span class="p">))</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">answer_set_to_dict</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">answer_set</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;VIOLATED PREFERENCES:&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">count_preferences</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">model</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INPUT:
+attribute(number_rows,root,100).
+
+entity(field,root,(f,0)).
+attribute((field,name),(f,0),temperature).
+attribute((field,type),(f,0),number).
+
+entity(field,root,(f,1)).
+attribute((field,name),(f,1),precipitation).
+attribute((field,type),(f,1),number).
+
+entity(view,root,(v,0)).
+entity(mark,(v,0),(m,0)).
+entity(encoding,(m,0),(e,0)).
+attribute((encoding,field),(e,0),(f,0)).
+entity(encoding,(m,0),(e,1)).
+attribute((encoding,field),(e,1),(f,1)).
+
+entity(scale,(v,0),(s,0)).
+entity(scale,(v,0),(s,1)).
+
+#show entity/3.
+#show attribute/3.
+
+OUTPUT:
+{&#39;field&#39;: [{&#39;name&#39;: &#39;temperature&#39;, &#39;type&#39;: &#39;number&#39;},
+           {&#39;name&#39;: &#39;precipitation&#39;, &#39;type&#39;: &#39;number&#39;}],
+ &#39;number_rows&#39;: 100,
+ &#39;task&#39;: &#39;summary&#39;,
+ &#39;view&#39;: [{&#39;mark&#39;: [{&#39;channel&#39;: &#39;y&#39;,
+                     &#39;encoding&#39;: [{&#39;channel&#39;: &#39;x&#39;,
+                                   &#39;field&#39;: (&#39;f&#39;, 0),
+                                   &#39;scale_type&#39;: &#39;linear&#39;,
+                                   &#39;type&#39;: &#39;linear&#39;,
+                                   &#39;zero&#39;: &#39;true&#39;},
+                                  {&#39;channel&#39;: &#39;y&#39;,
+                                   &#39;field&#39;: (&#39;f&#39;, 1),
+                                   &#39;scale_type&#39;: &#39;linear&#39;,
+                                   &#39;type&#39;: &#39;linear&#39;,
+                                   &#39;zero&#39;: &#39;true&#39;}],
+                     &#39;mark_channel_cont&#39;: &#39;y&#39;,
+                     &#39;mark_encoding_cont&#39;: (&#39;e&#39;, 1),
+                     &#39;scale&#39;: (&#39;e&#39;, 0),
+                     &#39;type&#39;: &#39;point&#39;}],
+           &#39;scale&#39;: [{&#39;type&#39;: &#39;ordinal&#39;},
+                     {&#39;type&#39;: &#39;ordinal&#39;},
+                     {&#39;channel&#39;: &#39;y&#39;,
+                      &#39;field&#39;: (&#39;f&#39;, 1),
+                      &#39;scale_type&#39;: &#39;linear&#39;,
+                      &#39;type&#39;: &#39;linear&#39;,
+                      &#39;zero&#39;: &#39;true&#39;},
+                     {&#39;channel&#39;: &#39;x&#39;,
+                      &#39;field&#39;: (&#39;f&#39;, 0),
+                      &#39;scale_type&#39;: &#39;linear&#39;,
+                      &#39;type&#39;: &#39;linear&#39;,
+                      &#39;zero&#39;: &#39;true&#39;}]}]}
+VIOLATED PREFERENCES:
+defaultdict(&lt;class &#39;int&#39;&gt;,
+            {&#39;c_c_point&#39;: 1,
+             &#39;encoding&#39;: 2,
+             &#39;encoding_field&#39;: 2,
+             &#39;linear_scale&#39;: 2,
+             &#39;linear_x&#39;: 1,
+             &#39;linear_y&#39;: 1,
+             &#39;summary_continuous_x&#39;: 1,
+             &#39;summary_continuous_y&#39;: 1,
+             &#39;summary_point&#39;: 1})
 </pre></div>
 </div>
 </div>
@@ -655,7 +723,7 @@ attribute or entity facts.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./api"
+            path: "./applications"
         },
         predefinedOutput: true
     }
@@ -669,17 +737,17 @@ attribute or entity facts.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="run.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../api/programs.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Run</p>
+            <p class="prev-next-title">Programs</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="programs.html" title="next page">
+    <a class='right-next' id="next-link" href="../guide.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Programs</p>
+        <p class="prev-next-title">Guides</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
