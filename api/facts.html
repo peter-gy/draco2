@@ -511,7 +511,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="fact-utils">
 <h1>Fact Utils<a class="headerlink" href="#fact-utils" title="Permalink to this headline">#</a></h1>
-<p>Generating facts in the expected format can be tedious. To make it easier to put data into and get data our of Draco, we an API to convert nested data to facts and vice versa.</p>
+<p>Generating facts in the expected format can be tedious. To make it easier to put data into and get data our of Draco, we provide an API to convert nested data to facts and vice versa.</p>
 <section id="module-draco.fact_utils">
 <span id="available-functions"></span><h2>Available functions<a class="headerlink" href="#module-draco.fact_utils" title="Permalink to this headline">#</a></h2>
 <dl class="py class">
@@ -533,7 +533,7 @@ title="Print to PDF"
 
 <dl class="py function">
 <dt class="sig sig-object py" id="draco.fact_utils.answer_set_to_dict">
-<span class="sig-prename descclassname"><span class="pre">draco.fact_utils.</span></span><span class="sig-name descname"><span class="pre">answer_set_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">answer_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'root'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.fact_utils.answer_set_to_dict" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">draco.fact_utils.</span></span><span class="sig-name descname"><span class="pre">answer_set_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">answer_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ROOT</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.fact_utils.answer_set_to_dict" title="Permalink to this definition">#</a></dt>
 <dd><p>A generic decoder that converts an answer set into a nested data structure.
 The inverse of this function is <code class="code docutils literal notranslate"><span class="pre">dict_to_facts</span></code>.</p>
 <dl class="field-list simple">
@@ -551,7 +551,7 @@ The inverse of this function is <code class="code docutils literal notranslate">
 
 <dl class="py function">
 <dt class="sig sig-object py" id="draco.fact_utils.dict_to_facts">
-<span class="sig-prename descclassname"><span class="pre">draco.fact_utils.</span></span><span class="sig-name descname"><span class="pre">dict_to_facts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'root'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_generator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.fact_utils.dict_to_facts" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">draco.fact_utils.</span></span><span class="sig-name descname"><span class="pre">dict_to_facts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ROOT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_generator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.fact_utils.dict_to_facts" title="Permalink to this definition">#</a></dt>
 <dd><p>A generic encoder for dictionaries as answer set programming facts.</p>
 <p>The encoder can convert dictionaries as well as lists (generating
 identifiers as numbers).</p>

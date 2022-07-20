@@ -509,10 +509,10 @@ title="Print to PDF"
 <p>To express knowledge about visualizations, we first need a language to describe visualizations. Draco describes visualizations and context around them (e.g. properties of the data and task) as <em>facts</em>. In this section, we will describe the kinds of facts we chose for Draco.</p>
 <section id="draco-has-a-generic-specification-format">
 <h2>Draco has a Generic Specification Format<a class="headerlink" href="#draco-has-a-generic-specification-format" title="Permalink to this headline">#</a></h2>
-<p>The constraint solver Clingo reasons about the facts that describe a visualization. The specific format we use to describe facts to the solver is as a <em>function</em> of the name <code class="docutils literal notranslate"><span class="pre">entity</span></code> or <code class="docutils literal notranslate"><span class="pre">attribute</span></code>.</p>
+<p>The constraint solver <a class="reference external" href="https://potassco.org/clingo/">Clingo</a> reasons about the facts that describe a visualization. The specific format we use to describe facts to the solver is as a <em>function</em> of the name <code class="docutils literal notranslate"><span class="pre">entity</span></code> or <code class="docutils literal notranslate"><span class="pre">attribute</span></code>.</p>
 <section id="entities">
 <h3>Entities<a class="headerlink" href="#entities" title="Permalink to this headline">#</a></h3>
-<p>Entities describe objects. The facts <code class="docutils literal notranslate"><span class="pre">entity</span></code> describes what other entities are associates with an entity. If an entity has no parents, we use a special identifier <code class="docutils literal notranslate"><span class="pre">root</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">entity(view,root,v1).</span></code> says that there is a view v1 on the root.</p>
+<p>Entities describe objects. The facts <code class="docutils literal notranslate"><span class="pre">entity</span></code> describes what other entities associate with an entity. If an entity has no parents, we use a special identifier <code class="docutils literal notranslate"><span class="pre">root</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">entity(view,root,v1).</span></code> says that there is a view v1 on the root.</p>
 </section>
 <section id="attributes">
 <h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">#</a></h3>

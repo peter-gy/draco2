@@ -504,7 +504,7 @@ title="Print to PDF"
 <section id="how-to-customize-or-extend-the-knowledge-base">
 <h2>How to customize or extend the knowledge base<a class="headerlink" href="#how-to-customize-or-extend-the-knowledge-base" title="Permalink to this headline">#</a></h2>
 <p>You can design your own description language and use it with Draco or extend the existing language we use here. If you don’t know where to start with the constraints, you can first use our <a class="reference external" href="https://dig.cmu.edu/draco2/api/run.html#draco.run.run_clingo"><code class="docutils literal notranslate"><span class="pre">run_clingo</span></code></a> and <a class="reference external" href="https://dig.cmu.edu/draco2/api/programs.html"><code class="docutils literal notranslate"><span class="pre">programs</span></code></a> API to generate some recommendations. Then, you should be able to find some recommendations that should have been left out, and you can write constraints to reflect them.<br />
-If you write your own despription language, you need to set up the search space in a similar way to <a class="reference external" href="https://github.com/cmudig/draco2/blob/main/draco/asp/generate.lp"><code class="docutils literal notranslate"><span class="pre">generate.lp</span></code></a> before trying to generate recommendations.</p>
+If you write your own description language, you need to set up the search space in a similar way to <a class="reference external" href="https://github.com/cmudig/draco2/blob/main/draco/asp/generate.lp"><code class="docutils literal notranslate"><span class="pre">generate.lp</span></code></a> before trying to generate recommendations.</p>
 <p>For example, the following snippet shows how to use the <code class="docutils literal notranslate"><span class="pre">run_clingo</span></code> API to generate one recommendation. You can set a different number to look into more results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -599,7 +599,7 @@ If you write your own despription language, you need to set up the search space 
 <ul class="simple">
 <li><p>check if some of your constraints are too tight, and move them to soft constraints</p></li>
 </ul>
-<p>If you see no recommendations, you might have made mistakes in the hard constraints. You can allow violations to check what are the common ones by removing the <code class="docutils literal notranslate"><span class="pre">violation</span></code> constriant, which forbids any violations, from the programs. Below is an example:</p>
+<p>If you see no recommendations, you might have made mistakes in the hard constraints. You can allow violations to check what are the common ones by removing the <code class="docutils literal notranslate"><span class="pre">violation</span></code> constraint, which forbids any violations, from the programs. Below is an example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">draco</span> <span class="kn">import</span> <span class="n">Draco</span>

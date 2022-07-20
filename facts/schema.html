@@ -494,7 +494,7 @@ title="Print to PDF"
 <h1>Data and Schema<a class="headerlink" href="#data-and-schema" title="Permalink to this headline">#</a></h1>
 <p>In Draco, you can describe what you know about the dataset and the fields in the data. There can be only one dataset in a Draco program.</p>
 <p>Besides general statistics about the whole dataset, the schema has information about field types and field statistics.</p>
-<p>You can use Draco’s <a class="reference internal" href="../api/schema.html"><span class="doc std std-doc">data schema API</span></a> to generate a schema description from a file or Pandas dataframe.</p>
+<p>You can use Draco’s <a class="reference internal" href="../api/schema.html"><span class="doc std std-doc">data schema API</span></a> to generate a schema description from a file or <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">Pandas dataframe</a>.</p>
 <section id="dataset-properties">
 <h2>Dataset Properties<a class="headerlink" href="#dataset-properties" title="Permalink to this headline">#</a></h2>
 <p>General properties of the dataset that are not specific to a field are properties of the root.</p>
@@ -503,7 +503,7 @@ title="Print to PDF"
 </section>
 <section id="field-properties">
 <h2>Field Properties<a class="headerlink" href="#field-properties" title="Permalink to this headline">#</a></h2>
-<p>Draco can use information about the field type and field statistics. Each field entity is associated with a field. The facts therefore have the form of e.g. <code class="docutils literal notranslate"><span class="pre">attribute((field,type),foo,number).</span></code> (read as <em>the type of the foo field is number</em>). For each field, there should be a entity fact <code class="docutils literal notranslate"><span class="pre">entity</span></code> that tells Draco that the field exists on the root (e.g. <code class="docutils literal notranslate"><span class="pre">entity(field,root,foo).</span></code>).</p>
+<p>Draco can use information about the field type and field statistics. Each field entity is associated with a field. The facts therefore have the form of e.g. <code class="docutils literal notranslate"><span class="pre">attribute((field,type),foo,number).</span></code> (read as <em>the type of the foo field is number</em>). For each field, there should be an entity fact <code class="docutils literal notranslate"><span class="pre">entity</span></code> that tells Draco that the field exists on the root (e.g. <code class="docutils literal notranslate"><span class="pre">entity(field,root,foo).</span></code>).</p>
 <p><code class="docutils literal notranslate"><span class="pre">(field,name)</span></code>
 : The name of the field.</p>
 <p><code class="docutils literal notranslate"><span class="pre">(field,type)</span></code>
