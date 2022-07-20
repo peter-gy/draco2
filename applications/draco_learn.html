@@ -768,44 +768,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [6],</span> in <span class="ni">&lt;cell line: 13&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="n">kim_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">pair</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pairs_to_vec</span><span class="p">(</span><span class="n">kim_data</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">negative</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="n">default_draco</span><span class="o">.</span><span class="n">soft_constraint_names</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="p">),</span> <span class="s2">&quot;Feature names do not match.&quot;</span>
-
-<span class="nn">Input In [4],</span> in <span class="ni">pairs_to_vec</span><span class="nt">(specs)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">for</span> <span class="n">example</span> <span class="ow">in</span> <span class="n">specs</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">neg_feature_vec</span> <span class="o">=</span> <span class="n">default_draco</span><span class="o">.</span><span class="n">count_preferences</span><span class="p">(</span><span class="n">example</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">example</span><span class="p">[</span><span class="s2">&quot;negative&quot;</span><span class="p">])</span>
-<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="n">pos_feature_vec</span> <span class="o">=</span> <span class="n">default_draco</span><span class="o">.</span><span class="n">count_preferences</span><span class="p">(</span><span class="n">example</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">example</span><span class="p">[</span><span class="s2">&quot;positive&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="k">assert</span> <span class="n">neg_feature_vec</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="k">assert</span> <span class="n">pos_feature_vec</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-
-<span class="nn">File ~/work/draco2/draco2/draco/draco.py:146,</span> in <span class="ni">Draco.count_preferences</span><span class="nt">(self, spec)</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">144</span>     <span class="n">result</span><span class="p">:</span> <span class="n">DefaultDict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">146</span>     <span class="n">model</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">run_clingo</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">148</span>     <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">answer_set</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">149</span>         <span class="k">if</span> <span class="n">symbol</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;preference&quot;</span><span class="p">:</span>
-
-<span class="nn">File ~/work/draco2/draco2/draco/run.py:112,</span> in <span class="ni">run_clingo</span><span class="nt">(program, models, topK, arguments)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="n">config</span><span class="o">.</span><span class="n">solve</span><span class="o">.</span><span class="n">models</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">models</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span> <span class="n">config</span><span class="o">.</span><span class="n">solve</span><span class="o">.</span><span class="n">project</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="ne">--&gt; </span><span class="mi">112</span> <span class="n">ctl</span><span class="o">.</span><span class="n">ground</span><span class="p">([(</span><span class="s2">&quot;base&quot;</span><span class="p">,</span> <span class="p">[])])</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="n">solve_handle</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">clingo</span><span class="o">.</span><span class="n">solving</span><span class="o">.</span><span class="n">SolveHandle</span><span class="p">,</span> <span class="n">ctl</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">yield_</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="k">with</span> <span class="n">solve_handle</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
-
-<span class="nn">File ~/.cache/pypoetry/virtualenvs/draco-2B3Fy6YM-py3.8/lib/python3.8/site-packages/clingo/control.py:338,</span> in <span class="ni">Control.ground</span><span class="nt">(self, parts, context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">335</span>         <span class="n">c_part</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">_rep</span>
-<span class="g g-Whitespace">    </span><span class="mi">336</span>     <span class="n">c_part</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">part</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="ne">--&gt; </span><span class="mi">338</span> <span class="n">_handle_error</span><span class="p">(</span><span class="n">_lib</span><span class="o">.</span><span class="n">clingo_control_ground</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">339</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_rep</span><span class="p">,</span> <span class="n">c_parts</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">),</span> <span class="n">c_cb</span><span class="p">,</span> <span class="n">c_data</span><span class="p">),</span> <span class="n">data</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception ignored in: &lt;function Control.__del__ at 0x7fb6a3dd4040&gt;
+Traceback (most recent call last):
+  File &quot;/home/runner/.virtualenvs/draco-2B3Fy6YM-py3.9/lib/python3.9/site-packages/clingo/control.py&quot;, line 172, in __del__
+    _lib.clingo_control_free(self._rep)
+KeyboardInterrupt: 
 </pre></div>
 </div>
 </div>
