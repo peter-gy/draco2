@@ -518,6 +518,64 @@ title="Print to PDF"
 <dt class="sig sig-object py" id="draco.Draco">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">draco.</span></span><span class="sig-name descname"><span class="pre">Draco</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">define</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">programs.define</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">programs.constraints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">helpers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">programs.helpers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">programs.generate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hard</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">programs.hard</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">programs.soft</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">programs.optimize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">draco_weights</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.Draco" title="Permalink to this definition">#</a></dt>
 <dd><p>A class for holding all the programs used by Draco.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="draco.Draco.check_spec">
+<span class="sig-name descname"><span class="pre">check_spec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.Draco.check_spec" title="Permalink to this definition">#</a></dt>
+<dd><p>Checks the spec against the hard constraints.</p>
+<p>Internally, Draco checks against the definitions, constraints, helpers,
+and hard constraints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>spec</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – The specification to check</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="draco.Draco.complete_spec">
+<span class="sig-name descname"><span class="pre">complete_spec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.Draco.complete_spec" title="Permalink to this definition">#</a></dt>
+<dd><p>Get optimal completions for the [partial input specification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spec</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – The partial specification to complete.</p></li>
+<li><p><strong>models</strong> – The number of completetions to return, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="draco.Draco.count_preferences">
+<span class="sig-name descname"><span class="pre">count_preferences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.Draco.count_preferences" title="Permalink to this definition">#</a></dt>
+<dd><p>Get a dictionary from preferences to how often a given specification
+violates the preference. Returns None if the problem is not satisfiable.</p>
+<p>Internally, Draco checks against the definitions, constraints, helpers,
+and soft constraints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>spec</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – The specification to check</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="draco.Draco.get_violations">
+<span class="sig-name descname"><span class="pre">get_violations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.Draco.get_violations" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the list of violations for a given specification. Returns None if the
+problem is not satisfiable.</p>
+<p>Internally, Draco checks against the definitions, constraints (without the
+constraint that disallows violations), helpers, and hard constraints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>spec</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – The specification to check</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
