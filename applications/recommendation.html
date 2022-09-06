@@ -21,7 +21,7 @@
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -37,7 +37,7 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Guides" href="../guide.html" />
+    <link rel="next" title="Learning Weights for the Draco Model" href="draco_learn.html" />
     <link rel="prev" title="Programs" href="../api/programs.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -211,6 +211,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Visualization Recommendation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="draco_learn.html">
+   Learning Weights for the Draco Model
   </a>
  </li>
 </ul>
@@ -461,8 +466,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#histogramm">
-   Histogramm
+  <a class="reference internal nav-link" href="#histogram">
+   Histogram
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -490,8 +495,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#histogramm">
-   Histogramm
+  <a class="reference internal nav-link" href="#histogram">
+   Histogram
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -522,9 +527,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section id="histogramm">
-<h2>Histogramm<a class="headerlink" href="#histogramm" title="Permalink to this headline">#</a></h2>
-<p>In this example, we tell Draco to show a binned chart. A possible visualization is a tick plot but because the tick marks would overlap, Draco adds an addicional count encoding.</p>
+<section id="histogram">
+<h2>Histogram<a class="headerlink" href="#histogram" title="Permalink to this headline">#</a></h2>
+<p>In this example, we tell Draco to show a binned chart. A possible visualization is a tick plot but because the tick marks would overlap, Draco adds an additional count encoding.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../../draco/asp/examples/histogram.lp&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -565,43 +570,21 @@ OUTPUT:
 {&#39;field&#39;: [{&#39;name&#39;: &#39;temperature&#39;, &#39;type&#39;: &#39;number&#39;, &#39;unique&#39;: 100}],
  &#39;number_rows&#39;: 100,
  &#39;task&#39;: &#39;summary&#39;,
- &#39;view&#39;: [{&#39;mark&#39;: [{&#39;channel&#39;: &#39;y&#39;,
-                     &#39;discrete_size&#39;: 10,
-                     &#39;encoding&#39;: [{&#39;binning&#39;: 10,
+ &#39;view&#39;: [{&#39;coordinates&#39;: &#39;cartesian&#39;,
+           &#39;mark&#39;: [{&#39;encoding&#39;: [{&#39;binning&#39;: 10,
                                    &#39;channel&#39;: &#39;x&#39;,
-                                   &#39;encoding_cardinality&#39;: 10,
-                                   &#39;field&#39;: (&#39;f&#39;, 0),
-                                   &#39;scale_type&#39;: &#39;linear&#39;,
-                                   &#39;type&#39;: &#39;linear&#39;},
-                                  {&#39;aggregate&#39;: &#39;count&#39;,
-                                   &#39;channel&#39;: &#39;y&#39;,
-                                   &#39;scale_type&#39;: &#39;linear&#39;,
-                                   &#39;type&#39;: &#39;linear&#39;,
-                                   &#39;zero&#39;: &#39;true&#39;}],
-                     &#39;mark_channel_cont&#39;: &#39;y&#39;,
-                     &#39;mark_channel_discrete_or_binned&#39;: &#39;x&#39;,
-                     &#39;mark_encoding_cont&#39;: (&#39;e&#39;, 1),
-                     &#39;mark_encoding_discrete_or_binned&#39;: (&#39;e&#39;, 0),
-                     &#39;scale&#39;: (&#39;e&#39;, 0),
-                     &#39;type&#39;: &#39;bar&#39;,
-                     &#39;x_cardinality&#39;: 10}],
-           &#39;scale&#39;: [{&#39;aggregate&#39;: &#39;count&#39;,
-                      &#39;channel&#39;: &#39;y&#39;,
-                      &#39;scale_type&#39;: &#39;linear&#39;,
-                      &#39;type&#39;: &#39;linear&#39;,
-                      &#39;zero&#39;: &#39;true&#39;},
-                     {&#39;binning&#39;: 10,
-                      &#39;channel&#39;: &#39;x&#39;,
-                      &#39;encoding_cardinality&#39;: 10,
-                      &#39;field&#39;: (&#39;f&#39;, 0),
-                      &#39;scale_type&#39;: &#39;linear&#39;,
-                      &#39;type&#39;: &#39;linear&#39;}]}]}
+                                   &#39;field&#39;: (&#39;f&#39;, 0)},
+                                  {&#39;aggregate&#39;: &#39;count&#39;, &#39;channel&#39;: &#39;y&#39;}],
+                     &#39;type&#39;: &#39;bar&#39;}],
+           &#39;scale&#39;: [{&#39;channel&#39;: &#39;x&#39;, &#39;type&#39;: &#39;linear&#39;},
+                     {&#39;channel&#39;: &#39;y&#39;, &#39;type&#39;: &#39;linear&#39;, &#39;zero&#39;: &#39;true&#39;}]}]}
 VIOLATED PREFERENCES:
 defaultdict(&lt;class &#39;int&#39;&gt;,
             {&#39;aggregate&#39;: 1,
              &#39;aggregate_count&#39;: 1,
              &#39;bin&#39;: 1,
              &#39;c_d_no_overlap_bar&#39;: 1,
+             &#39;cartesian_coordinate&#39;: 1,
              &#39;encoding&#39;: 2,
              &#39;encoding_field&#39;: 1,
              &#39;linear_scale&#39;: 2,
@@ -621,13 +604,13 @@ defaultdict(&lt;class &#39;int&#39;&gt;,
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../../draco/asp/examples/scatter.lp&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">hist_spec</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">scatter_spec</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INPUT:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">hist_spec</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scatter_spec</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OUTPUT:&quot;</span><span class="p">)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">complete_spec</span><span class="p">(</span><span class="n">hist_spec</span><span class="p">))</span>
+<span class="n">model</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">complete_spec</span><span class="p">(</span><span class="n">scatter_spec</span><span class="p">))</span>
 <span class="n">pprint</span><span class="p">(</span><span class="n">answer_set_to_dict</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">answer_set</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;VIOLATED PREFERENCES:&quot;</span><span class="p">)</span>
@@ -639,23 +622,21 @@ defaultdict(&lt;class &#39;int&#39;&gt;,
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INPUT:
 attribute(number_rows,root,100).
 
-entity(field,root,(f,0)).
-attribute((field,name),(f,0),temperature).
-attribute((field,type),(f,0),number).
+entity(field,root,f0).
+attribute((field,name),f0,temperature).
+attribute((field,type),f0,number).
 
-entity(field,root,(f,1)).
-attribute((field,name),(f,1),precipitation).
-attribute((field,type),(f,1),number).
+entity(field,root,f1).
+attribute((field,name),f1,precipitation).
+attribute((field,type),f1,number).
 
-entity(view,root,(v,0)).
-entity(mark,(v,0),(m,0)).
-entity(encoding,(m,0),(e,0)).
-attribute((encoding,field),(e,0),(f,0)).
-entity(encoding,(m,0),(e,1)).
-attribute((encoding,field),(e,1),(f,1)).
+entity(view,root,v0).
 
-entity(scale,(v,0),(s,0)).
-entity(scale,(v,0),(s,1)).
+entity(mark,v0,m).
+entity(encoding,m,e0).
+attribute((encoding,field),e0,f0).
+entity(encoding,m,e1).
+attribute((encoding,field),e1,f1).
 
 #show entity/3.
 #show attribute/3.
@@ -665,36 +646,16 @@ OUTPUT:
            {&#39;name&#39;: &#39;precipitation&#39;, &#39;type&#39;: &#39;number&#39;}],
  &#39;number_rows&#39;: 100,
  &#39;task&#39;: &#39;summary&#39;,
- &#39;view&#39;: [{&#39;mark&#39;: [{&#39;channel&#39;: &#39;y&#39;,
-                     &#39;encoding&#39;: [{&#39;channel&#39;: &#39;x&#39;,
-                                   &#39;field&#39;: (&#39;f&#39;, 0),
-                                   &#39;scale_type&#39;: &#39;linear&#39;,
-                                   &#39;type&#39;: &#39;linear&#39;,
-                                   &#39;zero&#39;: &#39;true&#39;},
-                                  {&#39;channel&#39;: &#39;y&#39;,
-                                   &#39;field&#39;: (&#39;f&#39;, 1),
-                                   &#39;scale_type&#39;: &#39;linear&#39;,
-                                   &#39;type&#39;: &#39;linear&#39;,
-                                   &#39;zero&#39;: &#39;true&#39;}],
-                     &#39;mark_channel_cont&#39;: &#39;y&#39;,
-                     &#39;mark_encoding_cont&#39;: (&#39;e&#39;, 1),
-                     &#39;scale&#39;: (&#39;e&#39;, 0),
+ &#39;view&#39;: [{&#39;coordinates&#39;: &#39;cartesian&#39;,
+           &#39;mark&#39;: [{&#39;encoding&#39;: [{&#39;channel&#39;: &#39;x&#39;, &#39;field&#39;: &#39;f0&#39;},
+                                  {&#39;channel&#39;: &#39;y&#39;, &#39;field&#39;: &#39;f1&#39;}],
                      &#39;type&#39;: &#39;point&#39;}],
-           &#39;scale&#39;: [{&#39;type&#39;: &#39;ordinal&#39;},
-                     {&#39;type&#39;: &#39;ordinal&#39;},
-                     {&#39;channel&#39;: &#39;y&#39;,
-                      &#39;field&#39;: (&#39;f&#39;, 1),
-                      &#39;scale_type&#39;: &#39;linear&#39;,
-                      &#39;type&#39;: &#39;linear&#39;,
-                      &#39;zero&#39;: &#39;true&#39;},
-                     {&#39;channel&#39;: &#39;x&#39;,
-                      &#39;field&#39;: (&#39;f&#39;, 0),
-                      &#39;scale_type&#39;: &#39;linear&#39;,
-                      &#39;type&#39;: &#39;linear&#39;,
-                      &#39;zero&#39;: &#39;true&#39;}]}]}
+           &#39;scale&#39;: [{&#39;channel&#39;: &#39;x&#39;, &#39;type&#39;: &#39;linear&#39;, &#39;zero&#39;: &#39;true&#39;},
+                     {&#39;channel&#39;: &#39;y&#39;, &#39;type&#39;: &#39;linear&#39;, &#39;zero&#39;: &#39;true&#39;}]}]}
 VIOLATED PREFERENCES:
 defaultdict(&lt;class &#39;int&#39;&gt;,
             {&#39;c_c_point&#39;: 1,
+             &#39;cartesian_coordinate&#39;: 1,
              &#39;encoding&#39;: 2,
              &#39;encoding_field&#39;: 2,
              &#39;linear_scale&#39;: 2,
@@ -744,10 +705,10 @@ defaultdict(&lt;class &#39;int&#39;&gt;,
             <p class="prev-next-title">Programs</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../guide.html" title="next page">
+    <a class='right-next' id="next-link" href="draco_learn.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Guides</p>
+        <p class="prev-next-title">Learning Weights for the Draco Model</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
