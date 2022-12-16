@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Read Data and Generate the Schema" href="schema.html" />
@@ -201,6 +203,11 @@ const thebe_selector_output = ".output, .cell_output"
    Programs
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="server.html">
+   Server
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -216,6 +223,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../applications/draco_learn.html">
    Learning Weights for the Draco Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/debug_draco.html">
+   Draco Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/server.html">
+   Server
   </a>
  </li>
 </ul>
@@ -531,7 +548,7 @@ title="Print to PDF"
 and hard constraints.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>spec</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – The specification to check</p>
+<dd class="field-odd"><p><strong>spec</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – The specification to check</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
@@ -542,12 +559,12 @@ and hard constraints.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="draco.Draco.complete_spec">
 <span class="sig-name descname"><span class="pre">complete_spec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.Draco.complete_spec" title="Permalink to this definition">#</a></dt>
-<dd><p>Get optimal completions for the [partial input specification.</p>
+<dd><p>Get optimal completions for the partial input specification.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>spec</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – The partial specification to complete.</p></li>
-<li><p><strong>models</strong> – The number of completetions to return, defaults to 1</p></li>
+<li><p><strong>spec</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – The partial specification to complete.</p></li>
+<li><p><strong>models</strong> – The number of completions to return, defaults to 1</p></li>
 </ul>
 </dd>
 </dl>
@@ -556,13 +573,13 @@ and hard constraints.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="draco.Draco.count_preferences">
 <span class="sig-name descname"><span class="pre">count_preferences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#draco.Draco.count_preferences" title="Permalink to this definition">#</a></dt>
-<dd><p>Get a dictionary from preferences to how often a given specification
+<dd><p>Get a dictionary from preferences to show how often a given specification
 violates the preference. Returns None if the problem is not satisfiable.</p>
 <p>Internally, Draco checks against the definitions, constraints, helpers,
 and soft constraints.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>spec</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – The specification to check</p>
+<dd class="field-odd"><p><strong>spec</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – The specification to check</p>
 </dd>
 </dl>
 </dd></dl>
@@ -576,7 +593,7 @@ problem is not satisfiable.</p>
 constraint that disallows violations), helpers, and hard constraints.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>spec</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – The specification to check</p>
+<dd class="field-odd"><p><strong>spec</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – The specification to check</p>
 </dd>
 </dl>
 </dd></dl>
@@ -588,39 +605,39 @@ constraint that disallows violations), helpers, and hard constraints.</p>
 <h2>Usage Example<a class="headerlink" href="#usage-example" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">draco</span> <span class="kn">import</span> <span class="n">Draco</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from draco import Draco
 
-<span class="n">d</span> <span class="o">=</span> <span class="n">Draco</span><span class="p">()</span>
+d = Draco()
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valid_spec</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">attribute(number_rows,root,100).</span>
-<span class="s2">entity(field,root,f1).</span>
-<span class="s2">attribute((field,name),f1,temperature).</span>
-<span class="s2">attribute((field,type),f1,number).</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>valid_spec = &quot;&quot;&quot;
+attribute(number_rows,root,100).
+entity(field,root,f1).
+attribute((field,name),f1,temperature).
+attribute((field,type),f1,number).
 
-<span class="s2">entity(view,root,v).</span>
-<span class="s2">entity(mark,v,m1).</span>
-<span class="s2">attribute((mark,type),m1,tick).</span>
-<span class="s2">entity(encoding,m1,e1).</span>
-<span class="s2">attribute((encoding,channel),e1,x).</span>
-<span class="s2">attribute((encoding,field),e1,f1).</span>
+entity(view,root,v).
+entity(mark,v,m1).
+attribute((mark,type),m1,tick).
+entity(encoding,m1,e1).
+attribute((encoding,channel),e1,x).
+attribute((encoding,field),e1,f1).
 
-<span class="s2">entity(scale,v,sx).</span>
-<span class="s2">attribute((scale,channel),sx,x).</span>
-<span class="s2">attribute((scale,type),sx,linear).</span>
-<span class="s2">&quot;&quot;&quot;</span>
+entity(scale,v,sx).
+attribute((scale,channel),sx,x).
+attribute((scale,type),sx,linear).
+&quot;&quot;&quot;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">check_spec</span><span class="p">(</span><span class="n">valid_spec</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>d.check_spec(valid_spec)
 </pre></div>
 </div>
 </div>
@@ -632,7 +649,7 @@ constraint that disallows violations), helpers, and hard constraints.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">get_violations</span><span class="p">(</span><span class="n">valid_spec</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>d.get_violations(valid_spec)
 </pre></div>
 </div>
 </div>
@@ -644,31 +661,31 @@ constraint that disallows violations), helpers, and hard constraints.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">invalid_spec</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">attribute(number_rows,root,100).</span>
-<span class="s2">entity(field,root,f1).</span>
-<span class="s2">attribute((field,name),f1,temperature).</span>
-<span class="s2">attribute((field,type),f1,number).</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>invalid_spec = &quot;&quot;&quot;
+attribute(number_rows,root,100).
+entity(field,root,f1).
+attribute((field,name),f1,temperature).
+attribute((field,type),f1,number).
 
-<span class="s2">entity(view,root,v).</span>
-<span class="s2">entity(mark,v,m1).</span>
-<span class="si">% i</span><span class="s2">nvalid mark</span>
-<span class="s2">attribute((mark,type),m1,invalid).</span>
-<span class="s2">entity(encoding,m1,e1).</span>
-<span class="s2">attribute((encoding,channel),e1,x).</span>
-<span class="s2">attribute((encoding,field),e1,f1).</span>
+entity(view,root,v).
+entity(mark,v,m1).
+% invalid mark
+attribute((mark,type),m1,invalid).
+entity(encoding,m1,e1).
+attribute((encoding,channel),e1,x).
+attribute((encoding,field),e1,f1).
 
-<span class="s2">entity(scale,v,sx).</span>
-<span class="s2">attribute((scale,channel),sx,x).</span>
-<span class="s2">attribute((scale,type),sx,linear).</span>
-<span class="s2">&quot;&quot;&quot;</span>
+entity(scale,v,sx).
+attribute((scale,channel),sx,x).
+attribute((scale,type),sx,linear).
+&quot;&quot;&quot;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">check_spec</span><span class="p">(</span><span class="n">invalid_spec</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>d.check_spec(invalid_spec)
 </pre></div>
 </div>
 </div>
@@ -680,7 +697,7 @@ constraint that disallows violations), helpers, and hard constraints.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">get_violations</span><span class="p">(</span><span class="n">invalid_spec</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>d.get_violations(invalid_spec)
 </pre></div>
 </div>
 </div>

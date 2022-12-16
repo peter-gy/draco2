@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Fact Utils" href="facts.html" />
@@ -201,6 +203,11 @@ const thebe_selector_output = ".output, .cell_output"
    Programs
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="server.html">
+   Server
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -216,6 +223,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../applications/draco_learn.html">
    Learning Weights for the Draco Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/debug_draco.html">
+   Draco Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/server.html">
+   Server
   </a>
  </li>
 </ul>
@@ -590,7 +607,7 @@ concatenated.</p></li>
 <li><p><strong>models</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Number of models to generate, defaults to 0 (meaning all models).</p></li>
 <li><p><strong>topK</strong> – Whether to return the top K models. If false (default), the program
 will not optimize the output models.</p></li>
-<li><p><strong>arguments</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Arguments to the clingo grounder and solver.
+<li><p><strong>arguments</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Arguments to the clingo grounder and solver.
 Only gringo options (without –text) and clasp’s search options are supported.
 For example, you can use [“-c foo=5”] to override the occurrences of
 constant “foo” in your input program.
@@ -611,18 +628,18 @@ Refer to the potassco guide for the options.</p></li>
 <h2>Usage Example<a class="headerlink" href="#usage-example" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">draco</span> <span class="kn">import</span> <span class="n">run_clingo</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from draco import run_clingo
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">run_clingo</span><span class="p">(</span><span class="s2">&quot;a. b :- a.&quot;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for model in run_clingo(&quot;a. b :- a.&quot;):
+    print(model)
 
-    <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">answer_set</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">answer_set</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    print(model.answer_set[0])
+    print(model.answer_set[1])
 </pre></div>
 </div>
 </div>

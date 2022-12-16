@@ -50,10 +50,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Bibliography" href="bibliography.html" />
-    <link rel="prev" title="Learning Weights for the Draco Model" href="applications/draco_learn.html" />
+    <link rel="prev" title="Server" href="applications/server.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -201,6 +203,11 @@ const thebe_selector_output = ".output, .cell_output"
    Programs
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="api/server.html">
+   Server
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -216,6 +223,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="applications/draco_learn.html">
    Learning Weights for the Draco Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="applications/debug_draco.html">
+   Draco Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="applications/server.html">
+   Server
   </a>
  </li>
 </ul>
@@ -513,46 +530,46 @@ If you write your own description language, you need to set up the search space 
 <p>For example, the following snippet shows how to use the <code class="docutils literal notranslate"><span class="pre">run_clingo</span></code> API to generate one recommendation. You can set a different number to look into more results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">draco</span> <span class="kn">import</span> <span class="n">answer_set_to_dict</span><span class="p">,</span> <span class="n">run_clingo</span>
-<span class="kn">from</span> <span class="nn">draco.programs</span> <span class="kn">import</span> <span class="n">define</span><span class="p">,</span> <span class="n">hard</span><span class="p">,</span> <span class="n">helpers</span><span class="p">,</span> <span class="n">constraints</span><span class="p">,</span> <span class="n">generate</span>
-<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from draco import answer_set_to_dict, run_clingo
+from draco.programs import define, hard, helpers, constraints, generate
+from pprint import pprint
 
-<span class="n">prog</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">generate</span><span class="o">.</span><span class="n">program</span>
-    <span class="o">+</span> <span class="n">define</span><span class="o">.</span><span class="n">program</span>
-    <span class="o">+</span> <span class="n">helpers</span><span class="o">.</span><span class="n">program</span>
-    <span class="o">+</span> <span class="n">hard</span><span class="o">.</span><span class="n">program</span>
-    <span class="o">+</span> <span class="n">constraints</span><span class="o">.</span><span class="n">program</span>
-<span class="p">)</span>
+prog = (
+    generate.program
+    + define.program
+    + helpers.program
+    + hard.program
+    + constraints.program
+)
 
-<span class="n">scatter</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    attribute(number_rows,root,100).</span>
+scatter = &quot;&quot;&quot;
+    attribute(number_rows,root,100).
 
-<span class="s2">    entity(field,root,(f,0)).</span>
-<span class="s2">    attribute((field,name),(f,0),temperature).</span>
-<span class="s2">    attribute((field,type),(f,0),number).</span>
+    entity(field,root,(f,0)).
+    attribute((field,name),(f,0),temperature).
+    attribute((field,type),(f,0),number).
 
-<span class="s2">    entity(field,root,(f,1)).</span>
-<span class="s2">    attribute((field,name),(f,1),precipitation).</span>
-<span class="s2">    attribute((field,type),(f,1),number).</span>
+    entity(field,root,(f,1)).
+    attribute((field,name),(f,1),precipitation).
+    attribute((field,type),(f,1),number).
 
-<span class="s2">    entity(view,root,(v,0)).</span>
-<span class="s2">    entity(mark,(v,0),(m,0)).</span>
-<span class="s2">    entity(encoding,(m,0),(e,0)).</span>
-<span class="s2">    attribute((encoding,field),(e,0),(f,0)).</span>
-<span class="s2">    entity(encoding,(m,0),(e,1)).</span>
-<span class="s2">    attribute((encoding,field),(e,1),(f,1)).</span>
+    entity(view,root,(v,0)).
+    entity(mark,(v,0),(m,0)).
+    entity(encoding,(m,0),(e,0)).
+    attribute((encoding,field),(e,0),(f,0)).
+    entity(encoding,(m,0),(e,1)).
+    attribute((encoding,field),(e,1),(f,1)).
 
-<span class="s2">    entity(scale,(v,0),(s,0)).</span>
-<span class="s2">    entity(scale,(v,0),(s,1)).</span>
+    entity(scale,(v,0),(s,0)).
+    entity(scale,(v,0),(s,1)).
 
-<span class="s2">    #show entity/3.</span>
-<span class="s2">    #show attribute/3.</span>
-<span class="s2">&quot;&quot;&quot;</span>
+    #show entity/3.
+    #show attribute/3.
+&quot;&quot;&quot;
 
-<span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">run_clingo</span><span class="p">(</span><span class="n">prog</span> <span class="o">+</span> <span class="n">scatter</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">pprint</span><span class="p">(</span><span class="n">answer_set_to_dict</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">answer_set</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">answer_set</span><span class="p">)</span>
+for model in run_clingo(prog + scatter, 1):
+    pprint(answer_set_to_dict(model.answer_set))
+    print(model.answer_set)
 </pre></div>
 </div>
 </div>
@@ -588,23 +605,23 @@ If you write your own description language, you need to set up the search space 
 <p>If you see no recommendations, you might have made mistakes in the hard constraints. You can allow violations to check what are the common ones by removing the <code class="docutils literal notranslate"><span class="pre">violation</span></code> constraint, which forbids any violations, from the programs. Below is an example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">draco</span> <span class="kn">import</span> <span class="n">Draco</span>
-<span class="kn">from</span> <span class="nn">draco.asp_utils</span> <span class="kn">import</span> <span class="n">blocks_to_program</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from draco import Draco
+from draco.asp_utils import blocks_to_program
 
-<span class="n">d</span> <span class="o">=</span> <span class="n">Draco</span><span class="p">()</span>
+d = Draco()
 
-<span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-    <span class="n">blocks_to_program</span><span class="p">(</span>
-        <span class="n">constraints</span><span class="o">.</span><span class="n">blocks</span><span class="p">,</span> <span class="nb">set</span><span class="p">(</span><span class="n">constraints</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">-</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;violation&quot;</span><span class="p">])</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-<span class="n">prog</span> <span class="o">=</span> <span class="n">generate</span><span class="o">.</span><span class="n">program</span> <span class="o">+</span> <span class="n">define</span><span class="o">.</span><span class="n">program</span> <span class="o">+</span> <span class="n">helpers</span><span class="o">.</span><span class="n">program</span> <span class="o">+</span> <span class="n">hard</span><span class="o">.</span><span class="n">program</span> <span class="o">+</span> <span class="n">c</span> <span class="o">+</span> <span class="n">scatter</span>
+c = &quot;&quot;.join(
+    blocks_to_program(
+        constraints.blocks, set(constraints.blocks.keys()) - set([&quot;violation&quot;])
+    )
+)
+prog = generate.program + define.program + helpers.program + hard.program + c + scatter
 
-<span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">run_clingo</span><span class="p">(</span><span class="n">prog</span> <span class="o">+</span> <span class="n">scatter</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">pprint</span><span class="p">(</span><span class="n">answer_set_to_dict</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">answer_set</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">answer_set</span><span class="p">)</span>
-    <span class="n">answer</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">symbol</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span> <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">answer_set</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get_violations</span><span class="p">(</span><span class="n">answer</span><span class="p">))</span>
+for model in run_clingo(prog + scatter, 1):
+    pprint(answer_set_to_dict(model.answer_set))
+    print(model.answer_set)
+    answer = [str(symbol) + &quot;. &quot; for symbol in model.answer_set]
+    print(d.get_violations(answer))
 </pre></div>
 </div>
 </div>
@@ -655,11 +672,11 @@ If you write your own description language, you need to set up the search space 
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="applications/draco_learn.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="applications/server.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Learning Weights for the Draco Model</p>
+            <p class="prev-next-title">Server</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="bibliography.html" title="next page">

@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Programs" href="programs.html" />
@@ -201,6 +203,11 @@ const thebe_selector_output = ".output, .cell_output"
    Programs
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="server.html">
+   Server
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -216,6 +223,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../applications/draco_learn.html">
    Learning Weights for the Draco Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/debug_draco.html">
+   Draco Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/server.html">
+   Server
   </a>
  </li>
 </ul>
@@ -563,7 +580,7 @@ identifiers as numbers).</p>
 <p>The inverse of this function is <code class="code docutils literal notranslate"><span class="pre">answer_set_to_dict</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -591,24 +608,24 @@ attribute or entity facts.</p>
 <h2>Usage Example<a class="headerlink" href="#usage-example" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">draco</span> <span class="kn">import</span> <span class="n">dict_to_facts</span><span class="p">,</span> <span class="n">answer_set_to_dict</span><span class="p">,</span> <span class="n">run_clingo</span>
-<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from draco import dict_to_facts, answer_set_to_dict, run_clingo
+from pprint import pprint
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facts</span> <span class="o">=</span> <span class="n">dict_to_facts</span><span class="p">(</span>
-    <span class="p">{</span>
-        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">},</span>
-        <span class="p">],</span>
-    <span class="p">}</span>
-<span class="p">)</span>
-<span class="n">facts</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>facts = dict_to_facts(
+    {
+        &quot;mark&quot;: &quot;bar&quot;,
+        &quot;encoding&quot;: [
+            {&quot;channel&quot;: &quot;x&quot;, &quot;field&quot;: &quot;condition&quot;},
+            {&quot;channel&quot;: &quot;y&quot;, &quot;aggregate&quot;: &quot;count&quot;},
+        ],
+    }
+)
+facts
 </pre></div>
 </div>
 </div>
@@ -626,12 +643,12 @@ attribute or entity facts.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we can run Clingo and convert the model back into the nested representation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># we can run Clingo and convert the model back into the nested representation
 
-<span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">run_clingo</span><span class="p">(</span><span class="n">facts</span><span class="p">):</span>
-    <span class="n">answer_set</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">answer_set</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">answer_set</span><span class="p">)</span>
-    <span class="n">pprint</span><span class="p">(</span><span class="n">answer_set_to_dict</span><span class="p">(</span><span class="n">answer_set</span><span class="p">))</span>
+for model in run_clingo(facts):
+    answer_set = model.answer_set
+    print(answer_set)
+    pprint(answer_set_to_dict(answer_set))
 </pre></div>
 </div>
 </div>
