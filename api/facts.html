@@ -208,6 +208,11 @@ const thebe_selector_output = ".output, .cell_output"
    Server
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="renderer.html">
+   Renderer
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -233,6 +238,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../applications/server.html">
    Server
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/renderer.html">
+   Visualization Renderer
   </a>
  </li>
 </ul>
@@ -608,24 +618,24 @@ attribute or entity facts.</p>
 <h2>Usage Example<a class="headerlink" href="#usage-example" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from draco import dict_to_facts, answer_set_to_dict, run_clingo
-from pprint import pprint
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">draco</span> <span class="kn">import</span> <span class="n">dict_to_facts</span><span class="p">,</span> <span class="n">answer_set_to_dict</span><span class="p">,</span> <span class="n">run_clingo</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>facts = dict_to_facts(
-    {
-        &quot;mark&quot;: &quot;bar&quot;,
-        &quot;encoding&quot;: [
-            {&quot;channel&quot;: &quot;x&quot;, &quot;field&quot;: &quot;condition&quot;},
-            {&quot;channel&quot;: &quot;y&quot;, &quot;aggregate&quot;: &quot;count&quot;},
-        ],
-    }
-)
-facts
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facts</span> <span class="o">=</span> <span class="n">dict_to_facts</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;mark&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;condition&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;channel&quot;</span><span class="p">:</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;aggregate&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">facts</span>
 </pre></div>
 </div>
 </div>
@@ -643,12 +653,12 @@ facts
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># we can run Clingo and convert the model back into the nested representation
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we can run Clingo and convert the model back into the nested representation</span>
 
-for model in run_clingo(facts):
-    answer_set = model.answer_set
-    print(answer_set)
-    pprint(answer_set_to_dict(answer_set))
+<span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">run_clingo</span><span class="p">(</span><span class="n">facts</span><span class="p">):</span>
+    <span class="n">answer_set</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">answer_set</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">answer_set</span><span class="p">)</span>
+    <span class="n">pprint</span><span class="p">(</span><span class="n">answer_set_to_dict</span><span class="p">(</span><span class="n">answer_set</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>

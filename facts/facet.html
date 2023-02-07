@@ -208,6 +208,11 @@ const thebe_selector_output = ".output, .cell_output"
    Server
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/renderer.html">
+   Renderer
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -233,6 +238,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../applications/server.html">
    Server
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/renderer.html">
+   Visualization Renderer
   </a>
  </li>
 </ul>
@@ -509,7 +519,8 @@ often called a small multiples chart.</p>
 <section id="facet-properties">
 <h2>Facet Properties<a class="headerlink" href="#facet-properties" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">(facet,channel)</span></code> : The facet channel. Can be one of <code class="docutils literal notranslate"><span class="pre">col</span></code> and <code class="docutils literal notranslate"><span class="pre">row</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">(facet,field)</span></code> : The facet field.</p>
+<p><code class="docutils literal notranslate"><span class="pre">(facet,field)</span></code> : The facet field. Note that the field should refers to field <code class="docutils literal notranslate"><span class="pre">name</span></code> rather than the field <code class="docutils literal notranslate"><span class="pre">entity</span></code> id.
+Although we specify the name and the id in the same way in the following examples, they can be different.</p>
 <p><code class="docutils literal notranslate"><span class="pre">(facet,binning)</span></code> : Binning a numeric field for faceting.</p>
 </section>
 <section id="example">

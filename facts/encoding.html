@@ -208,6 +208,11 @@ const thebe_selector_output = ".output, .cell_output"
    Server
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/renderer.html">
+   Renderer
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -233,6 +238,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../applications/server.html">
    Server
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/renderer.html">
+   Visualization Renderer
   </a>
  </li>
 </ul>
@@ -509,7 +519,9 @@ title="Print to PDF"
 <h2>Encoding Properties<a class="headerlink" href="#encoding-properties" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">(encoding,channel)</span></code> : The visual channel. One of <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">size</span></code>, <code class="docutils literal notranslate"><span class="pre">shape</span></code>, or <code class="docutils literal notranslate"><span class="pre">text</span></code>. Same as the
 <a class="reference internal" href="scale.html"><span class="doc std std-doc">scale channel</span></a>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">(encoding,field)</span></code> : The field that maps to the visual property of the mark.</p>
+<p><code class="docutils literal notranslate"><span class="pre">(encoding,field)</span></code> : The field that maps to the visual property of the mark. Note that the field should refers to field
+<code class="docutils literal notranslate"><span class="pre">name</span></code> rather than the field <code class="docutils literal notranslate"><span class="pre">entity</span></code> id. Although we specify the name and the id in the same way in the following
+examples, they can be different.</p>
 <p><code class="docutils literal notranslate"><span class="pre">(encoding,aggregate)</span></code> : How the data is aggregated. One of <code class="docutils literal notranslate"><span class="pre">count</span></code>, <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">median</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">stdev</span></code>, or <code class="docutils literal notranslate"><span class="pre">sum</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">(encoding,binning,N)</span></code> : How the data is binned into <code class="docutils literal notranslate"><span class="pre">N</span></code> bins.</p>
 <p><code class="docutils literal notranslate"><span class="pre">(encoding,stack)</span></code> : One of <code class="docutils literal notranslate"><span class="pre">zero</span></code>, <code class="docutils literal notranslate"><span class="pre">center</span></code>, or <code class="docutils literal notranslate"><span class="pre">normalize</span></code>.</p>

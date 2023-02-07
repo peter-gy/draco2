@@ -208,6 +208,11 @@ const thebe_selector_output = ".output, .cell_output"
    Server
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="renderer.html">
+   Renderer
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -233,6 +238,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../applications/server.html">
    Server
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/renderer.html">
+   Visualization Renderer
   </a>
  </li>
 </ul>
@@ -605,87 +615,39 @@ constraint that disallows violations), helpers, and hard constraints.</p>
 <h2>Usage Example<a class="headerlink" href="#usage-example" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from draco import Draco
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">draco</span> <span class="kn">import</span> <span class="n">Draco</span>
 
-d = Draco()
+<span class="n">d</span> <span class="o">=</span> <span class="n">Draco</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>valid_spec = &quot;&quot;&quot;
-attribute(number_rows,root,100).
-entity(field,root,f1).
-attribute((field,name),f1,temperature).
-attribute((field,type),f1,number).
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valid_spec</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">attribute(number_rows,root,100).</span>
+<span class="s2">entity(field,root,f1).</span>
+<span class="s2">attribute((field,name),f1,temperature).</span>
+<span class="s2">attribute((field,type),f1,number).</span>
 
-entity(view,root,v).
-entity(mark,v,m1).
-attribute((mark,type),m1,tick).
-entity(encoding,m1,e1).
-attribute((encoding,channel),e1,x).
-attribute((encoding,field),e1,f1).
+<span class="s2">entity(view,root,v).</span>
+<span class="s2">entity(mark,v,m1).</span>
+<span class="s2">attribute((mark,type),m1,tick).</span>
+<span class="s2">entity(encoding,m1,e1).</span>
+<span class="s2">attribute((encoding,channel),e1,x).</span>
+<span class="s2">attribute((encoding,field),e1,f1).</span>
 
-entity(scale,v,sx).
-attribute((scale,channel),sx,x).
-attribute((scale,type),sx,linear).
-&quot;&quot;&quot;
+<span class="s2">entity(scale,v,sx).</span>
+<span class="s2">attribute((scale,channel),sx,x).</span>
+<span class="s2">attribute((scale,type),sx,linear).</span>
+<span class="s2">&quot;&quot;&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>d.check_spec(valid_spec)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>d.get_violations(valid_spec)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>invalid_spec = &quot;&quot;&quot;
-attribute(number_rows,root,100).
-entity(field,root,f1).
-attribute((field,name),f1,temperature).
-attribute((field,type),f1,number).
-
-entity(view,root,v).
-entity(mark,v,m1).
-% invalid mark
-attribute((mark,type),m1,invalid).
-entity(encoding,m1,e1).
-attribute((encoding,channel),e1,x).
-attribute((encoding,field),e1,f1).
-
-entity(scale,v,sx).
-attribute((scale,channel),sx,x).
-attribute((scale,type),sx,linear).
-&quot;&quot;&quot;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>d.check_spec(invalid_spec)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">check_spec</span><span class="p">(</span><span class="n">valid_spec</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -697,12 +659,60 @@ attribute((scale,type),sx,linear).
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>d.get_violations(invalid_spec)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">get_violations</span><span class="p">(</span><span class="n">valid_spec</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;invalid_domain&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;existing_field&#39;, &#39;invalid_domain&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">invalid_spec</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">attribute(number_rows,root,100).</span>
+<span class="s2">entity(field,root,f1).</span>
+<span class="s2">attribute((field,name),f1,temperature).</span>
+<span class="s2">attribute((field,type),f1,number).</span>
+
+<span class="s2">entity(view,root,v).</span>
+<span class="s2">entity(mark,v,m1).</span>
+<span class="si">% i</span><span class="s2">nvalid mark</span>
+<span class="s2">attribute((mark,type),m1,invalid).</span>
+<span class="s2">entity(encoding,m1,e1).</span>
+<span class="s2">attribute((encoding,channel),e1,x).</span>
+<span class="s2">attribute((encoding,field),e1,f1).</span>
+
+<span class="s2">entity(scale,v,sx).</span>
+<span class="s2">attribute((scale,channel),sx,x).</span>
+<span class="s2">attribute((scale,type),sx,linear).</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">check_spec</span><span class="p">(</span><span class="n">invalid_spec</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">get_violations</span><span class="p">(</span><span class="n">invalid_spec</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;existing_field&#39;, &#39;invalid_domain&#39;]
 </pre></div>
 </div>
 </div>
