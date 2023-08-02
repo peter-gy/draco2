@@ -165,6 +165,60 @@ jobs:
           name: ${{ env.PYODIDE_DISTRO_NAME }}
           path: pyodide/pyodide-src/dist
 
+  docs-quick:
+    name: Build Jupyter Book
+    runs-on: ubuntu-latest
+
+    # This job is responsible for the GH Pages deployment
+    environment:
+      name: github-pages
+      url: ${{ steps.gh_pages_deployment.outputs.page_url }}
+
+    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install poetry
+        run: pipx install poetry
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version-file: ".python-version"
+          cache: "poetry"
+
+      - name: Install dependencies
+        run: poetry install --with web
+
+      # Required to execute notebooks with Python modules wrapping Node.js modules, such as Draco 1
+      - name: Setup Node
+        uses: actions/setup-node@v3
+
+      # Installing system dependencies to run each notebook
+      - name: Install native dependencies
+        run: apt-get update && apt-get install -y gringo
+
+      - name: Make book
+        run: make book
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload Documentation Site Artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./docs/_build/html
+
+      - name: Deploy to GitHub Pages
+        id: gh_pages_deployment
+        uses: actions/deploy-pages@v2
+
   docs:
     # No need to rebuild the docs if this is a release
     if: ${{ needs.variables.outputs.is_release == 'false' }}
