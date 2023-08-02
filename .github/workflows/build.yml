@@ -202,7 +202,7 @@ jobs:
 
       # Installing system dependencies to run each notebook
       - name: Install native dependencies
-        run: apt-get update && apt-get install -y gringo
+        run: sudo apt-get update && sudo apt-get install -y gringo
 
       - name: Make book
         run: make book
